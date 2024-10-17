@@ -1,0 +1,25 @@
+<div class="flex h-screen">
+    <!-- Sidebar -->
+    <nav class="w-64 bg-gray-800 text-white flex flex-col">
+        <div class="p-4 text-center text-2xl font-bold">Admin Panel</div>
+        <ul class="flex-1">
+            <li class="p-4 hover:bg-gray-700">
+                <a routerLink="/admin/dashboard">Dashboard</a>
+            </li>
+            <li class="p-4 hover:bg-gray-700">
+                <a routerLink="/admin/orders">Orders</a>
+            </li>
+            <li class="p-4 hover:bg-gray-700">
+                <a routerLink="/admin/products">Products</a>
+            </li>
+            <li class="p-4 hover:bg-gray-700">
+                <a routerLink="/admin/customers">Customers</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Content -->
+    <div class="flex-1 bg-gray-100 p-6">
+        <router-outlet></router-outlet>
+    </div>
+</div>
