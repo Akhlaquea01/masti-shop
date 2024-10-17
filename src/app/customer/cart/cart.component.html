@@ -1,0 +1,21 @@
+<div class="container mx-auto p-4">
+    <h2 class="text-3xl font-bold mb-4">Your Cart</h2>
+    <div *ngIf="cartItems.length === 0" class="text-center text-gray-500">
+        Your cart is empty.
+    </div>
+    <div *ngFor="let item of cartItems"
+        class="flex justify-between items-center bg-white shadow-md rounded-lg p-4 mb-4">
+        <div>
+            <h3 class="text-xl font-semibold">{{ item.name }}</h3>
+            <p class="text-gray-700">Price: ${{ item.price }}</p>
+        </div>
+        <button (click)="removeFromCart(item)"
+            class="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-600 transition">
+            Remove
+        </button>
+    </div>
+    <button (click)="clearCart()" *ngIf="cartItems.length > 0"
+        class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition">
+        Clear Cart
+    </button>
+</div>

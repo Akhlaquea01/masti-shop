@@ -1,0 +1,21 @@
+<!-- Navbar -->
+<nav class="bg-gray-800 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <a routerLink="/customer/home" class="text-white text-2xl font-bold">Gift Shop</a>
+        <div class="space-x-4">
+            <a routerLink="/customer/products" class="text-white hover:text-gray-400">Products</a>
+            <a routerLink="/customer/cart" class="text-white hover:text-gray-400">Cart</a>
+            <a routerLink="/customer/checkout" class="text-white hover:text-gray-400">Checkout</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Dynamic Route Content -->
+<div class="container mx-auto mt-6">
+    <router-outlet></router-outlet>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-800 p-4 text-center text-white mt-6">
+    <p>&copy; 2024 Gift Shop. All Rights Reserved.</p>
+</footer>
