@@ -12,6 +12,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from '../components/navbar/navbar.component';
+import { FooterComponent } from '../components/footer/footer.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { NavbarComponent } from '../components/navbar/navbar.component';
   ],
   imports: [
     NavbarComponent,
+    FooterComponent,
     CommonModule,
     FormsModule,
     CustomerRoutingModule
