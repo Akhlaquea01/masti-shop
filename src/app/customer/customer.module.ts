@@ -11,6 +11,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from '../components/navbar/navbar.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     LoginComponent
   ],
   imports: [
+    NavbarComponent,
     CommonModule,
     FormsModule,
     CustomerRoutingModule

@@ -1,11 +1,13 @@
+import { NgIf } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 
 @Component({
-  selector: 'masTi-layout',
-  templateUrl: './layout.component.html',
-  styleUrl: './layout.component.scss'
+  selector: 'masTi-navbar',
+  standalone: true,
+  imports: [NgIf],
+  templateUrl: './navbar.component.html'
 })
-export class LayoutComponent {
+export class NavbarComponent {
   isDropdownOpen = false;
   isMobileMenuOpen = false;
 
