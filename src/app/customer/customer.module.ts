@@ -15,6 +15,7 @@ import { NavbarComponent } from '../components/navbar/navbar.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { HeroComponent } from './home/hero/hero.component';
 import { CategoriesComponent } from './home/categories/categories.component';
+import { TrendingProductsComponent } from './home/trending-products/trending-products.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { CategoriesComponent } from './home/categories/categories.component';
     ProductListComponent,
     LoginComponent,
     HeroComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    TrendingProductsComponent
   ],
   imports: [
     NavbarComponent,
