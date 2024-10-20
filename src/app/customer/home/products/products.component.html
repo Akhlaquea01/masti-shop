@@ -1,0 +1,31 @@
+<!-- Title -->
+<div class="text-center pt-4">
+    <h1 class="font-bold text-4xl mb-6">{{ title }}</h1>
+</div>
+
+<!-- ✅ Grid Section - Starts Here -->
+<section
+    class="w-full max-w-7xl mx-auto grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center mt-10 mb-12 px-6">
+
+    <!-- ✅ Product Card - Starts Here -->
+    <div class="w-full max-w-sm bg-white shadow-md rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+        *ngFor="let product of products">
+        <a href="#">
+            <img [src]="product.imageUrl" alt="Product" class="h-64 w-full object-cover rounded-t-lg" />
+            <div class="p-4">
+                <span class="text-gray-400 uppercase text-xs">{{ product.brand }}</span>
+                <p class="text-lg font-bold text-black truncate mt-1 capitalize">{{ product.name }}</p>
+                <div class="flex items-center mt-2">
+                    <p class="text-lg font-semibold text-black">{{ product.price }}</p>
+                    <del class="ml-2 text-sm text-gray-600">{{ product.originalPrice }}</del>
+                    <div class="ml-auto">
+                        <i class="fa fa-cart-plus text-black" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <!-- 🛑 Product Card - Ends Here -->
+
+</section>
+<!-- 🛑 Grid Section - Ends Here -->
