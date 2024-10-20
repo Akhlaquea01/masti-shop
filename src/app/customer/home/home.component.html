@@ -1,24 +1,5 @@
 <!-- Hero Section -->
-<section class="bg-cover bg-center h-96" style="background-image: url('assets/images/MasTi.png');">
-    <div class="bg-black bg-opacity-50 h-full flex items-center justify-center">
-        <h1 class="text-white text-5xl font-extrabold">Find the Perfect Gift</h1>
-    </div>
-</section>
+<masTi-hero />
 
 <!-- Categories Section -->
-<section class="container mx-auto py-12">
-    <h2 class="text-3xl font-bold text-center mb-8">Categories</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div *ngFor="let category of categories"
-            class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition">
-            <img [src]="category.image" [alt]="category.name" class="w-full h-48 object-cover">
-            <div class="p-4 text-center">
-                <a [routerLink]="['/customer/products', category.id]"
-                    class="text-xl font-semibold text-blue-500 hover:underline">
-                    {{ category.name }}
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
+<masTi-categories id="categories"></masTi-categories>

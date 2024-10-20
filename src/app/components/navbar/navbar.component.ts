@@ -1,13 +1,15 @@
 import { NgIf } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
-
+import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 @Component({
   selector: 'masTi-navbar',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, RouterModule],
   templateUrl: './navbar.component.html'
 })
 export class NavbarComponent {
+  constructor(private router: Router) { }
   isDropdownOpen = false;
   isMobileMenuOpen = false;
 
@@ -31,4 +33,8 @@ export class NavbarComponent {
       this.isDropdownOpen = false;
     }
   }
+  // using from html so commented here
+  // navigateToCategories() {
+  //   this.router.navigate(['/customer/home'], { fragment: 'categories' });
+  // }
 }

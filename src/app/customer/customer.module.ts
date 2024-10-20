@@ -13,6 +13,8 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { FooterComponent } from '../components/footer/footer.component';
+import { HeroComponent } from './home/hero/hero.component';
+import { CategoriesComponent } from './home/categories/categories.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { FooterComponent } from '../components/footer/footer.component';
     CheckoutComponent,
     LayoutComponent,
     ProductListComponent,
-    LoginComponent
+    LoginComponent,
+    HeroComponent,
+    CategoriesComponent
   ],
   imports: [
     NavbarComponent,
