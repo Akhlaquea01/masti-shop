@@ -77,7 +77,8 @@ export class ProductService {
       cashback: '10% Cashback on Credit Cards',
       promoText: '*Terms & Conditions Apply',
       badge: 'Big Diwali Sale',
-      badgeColor: 'bg-yellow-400 text-blue-900'
+      badgeColor: 'bg-yellow-400 text-blue-900',
+      logo:'assets/images/offer.jpg'
     },
     {
       id: '2',
@@ -87,7 +88,8 @@ export class ProductService {
       cashback: '5% Cashback on All Orders',
       promoText: '*Limited Time Offer',
       badge: 'Mega Sale',
-      badgeColor: 'bg-pink-400 text-white'
+      badgeColor: 'bg-pink-400 text-white',
+      logo: 'assets/images/offer.jpg'
     }
 
   ]
@@ -143,7 +145,7 @@ export class ProductService {
 
   getTrendingProducts(): Product[] {
     // Example logic: Fetch the first 3 products
-    return this.products.slice(0, 3);
+    return this.products.slice(0, 4);
   }
 
   getProductById(id: string): Product | undefined {

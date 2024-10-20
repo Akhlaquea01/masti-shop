@@ -15,6 +15,7 @@ export interface Slide {
     promoText: string;
     badge: string;
     badgeColor: string;
+    logo: string;
 }
 
 

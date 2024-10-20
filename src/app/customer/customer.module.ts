@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { CustomerRoutingModule } from './customer-routing.module';
 import { HomeComponent } from './home/home.component';
-import { CategoryComponent } from './category/category.component';
 import { ProductDetailComponent } from './home/product-detail/product-detail.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
@@ -21,7 +20,6 @@ import { BreadcrumbComponent } from "../components/breadcrumb/breadcrumb.compone
 @NgModule({
   declarations: [
     HomeComponent,
-    CategoryComponent,
     ProductDetailComponent,
     CartComponent,
     CheckoutComponent,

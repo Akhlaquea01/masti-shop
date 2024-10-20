@@ -14,7 +14,7 @@
                         <h2 class="text-lg md:text-2xl font-bold">{{ slide.title }}</h2>
                         <p class="text-base md:text-xl">{{ slide.discount }}</p>
                         <div class="flex items-center justify-center md:justify-start space-x-2 mt-2">
-                            <img src="https://via.placeholder.com/50" alt="Placeholder Logo" class="h-6">
+                            <img [src]="slide.logo" alt="Placeholder Logo" class="h-6">
                             <p class="text-sm">{{ slide.cashback }}</p>
                         </div>
                         <p class="text-xs mt-1">{{ slide.promoText }}</p>
