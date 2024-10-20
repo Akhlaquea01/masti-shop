@@ -149,4 +149,9 @@ export class ProductService {
   getProductById(id: string): Product | undefined {
     return this.products.find(product => product.id === id);
   }
+
+  getCategoryNameById(categoryId: string): string | undefined {
+    const category = this.categories.find(cat => cat.id === categoryId);
+    return category ? category.name : 'Products'; // Return the name or undefined if not found
+  }
 }

@@ -4,7 +4,7 @@ import { AuthGuard } from './admin/auth.guard'; // Ensure you have the AuthGuard
 
 const routes: Routes = [
   {
-    path: 'customer',
+    path: '',
     loadChildren: () =>
       import('./customer/customer.module').then((m) => m.CustomerModule),
   },
@@ -13,8 +13,8 @@ const routes: Routes = [
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule),
   },
-  { path: '', redirectTo: 'customer/home', pathMatch: 'full' }, // Default to customer home
-  { path: '**', redirectTo: 'customer/home' }, // Handle unknown routes
+  { path: '', redirectTo: 'home', pathMatch: 'full' }, // Default to customer home
+  { path: '**', redirectTo: 'home' }, // Handle unknown routes
 ];
 
 @NgModule({

@@ -4,7 +4,7 @@ import { HomeComponent } from './home/home.component';
 
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProductDetailComponent } from './home/product-detail/product-detail.component';
 import { LayoutComponent } from './layout/layout.component';
 import { CategoryComponent } from './category/category.component';
 import { AuthGuard } from './auth.guard';

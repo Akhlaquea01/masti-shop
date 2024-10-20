@@ -63,6 +63,6 @@ export class NavbarComponent {
   }
   // using from html so commented here
   // navigateToCategories() {
-  //   this.router.navigate(['/customer/home'], { fragment: 'categories' });
+  //   this.router.navigate(['/home'], { fragment: 'categories' });
   // }
 }

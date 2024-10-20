@@ -16,7 +16,7 @@ export class LoginComponent {
 
   login() {
     if (this.authService.login(this.username, this.password)) {
-      this.router.navigate(['/customer/home']); // Redirect to home or dashboard
+      this.router.navigate(['/home']); // Redirect to home or dashboard
     } else {
       this.loginError = 'Invalid username or password!';
     }

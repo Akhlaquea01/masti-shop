@@ -24,8 +24,9 @@ export class ProductsComponent implements OnInit {
       if (params['categoryId']) {
         this.categoryId = params['categoryId'];
         this.products = this.productService.getProductsByCategory(this.categoryId);
+        this.title = this.productService.getCategoryNameById(this.categoryId);
         this.breadcrumbItems = [
-          { label: 'Home', url: '/customer/home' },
+          { label: 'Home', url: '/home' },
           { label: 'Product' } // No URL for the current page
         ];
       }
