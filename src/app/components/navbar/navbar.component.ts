@@ -9,28 +9,54 @@ import { Router } from '@angular/router';
   templateUrl: './navbar.component.html'
 })
 export class NavbarComponent {
-  constructor(private router: Router) { }
-  isDropdownOpen = false;
+  isProfileDropdownOpen = false;
   isMobileMenuOpen = false;
+  isCategoryDropdownOpen = false;
+  isMobileCategoryDropdownOpen = false;
 
-  // Toggles the dropdown menu visibility
-  toggleDropdown(): void {
-    this.isDropdownOpen = !this.isDropdownOpen;
+  // Toggle functions
+  toggleProfileDropdown() {
+    this.isProfileDropdownOpen = !this.isProfileDropdownOpen;
+    this.isCategoryDropdownOpen = false; // Close category dropdown if profile is opened
   }
 
-  // Toggles the mobile menu visibility
-  toggleMobileMenu(): void {
+  toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 
-  // Closes the dropdown if clicked outside
+  toggleCategoryDropdown() {
+    this.isCategoryDropdownOpen = !this.isCategoryDropdownOpen;
+    this.isProfileDropdownOpen = false; // Close profile dropdown if category is opened
+  }
+
+  toggleMobileCategoryDropdown() {
+    this.isMobileCategoryDropdownOpen = !this.isMobileCategoryDropdownOpen;
+  }
+
+  selectCategory(category: string) {
+    console.log(`Selected category: ${category}`);
+    this.isCategoryDropdownOpen = false; // Close the dropdown after selection
+    this.isMobileCategoryDropdownOpen = false; // Close mobile dropdown after selection
+  }
+
+  // Close dropdowns when clicking outside
   @HostListener('document:click', ['$event'])
-  onDocumentClick(event: Event): void {
+  clickOut(event: MouseEvent) {
     const target = event.target as HTMLElement;
 
-    // If the click is outside the dropdown and button, close it
-    if (!target.closest('.relative.ml-3')) {
-      this.isDropdownOpen = false;
+    // Close profile dropdown if clicked outside
+    if (!target.closest('.relative') && this.isProfileDropdownOpen) {
+      this.isProfileDropdownOpen = false;
+    }
+
+    // Close category dropdowns if clicked outside
+    if (!target.closest('.relative') && this.isCategoryDropdownOpen) {
+      this.isCategoryDropdownOpen = false;
+    }
+
+    // Close mobile category dropdown if clicked outside
+    if (!target.closest('.relative') && this.isMobileCategoryDropdownOpen) {
+      this.isMobileCategoryDropdownOpen = false;
     }
   }
   // using from html so commented here
