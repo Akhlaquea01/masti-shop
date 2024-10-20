@@ -35,6 +35,7 @@ export class NavbarComponent {
 
   selectCategory(category: string) {
     console.log(`Selected category: ${category}`);
+    this.isMobileMenuOpen = false;
     this.isCategoryDropdownOpen = false; // Close the dropdown after selection
     this.isMobileCategoryDropdownOpen = false; // Close mobile dropdown after selection
   }
@@ -56,6 +57,7 @@ export class NavbarComponent {
 
     // Close mobile category dropdown if clicked outside
     if (!target.closest('.relative') && this.isMobileCategoryDropdownOpen) {
+      this.isMobileMenuOpen = false;
       this.isMobileCategoryDropdownOpen = false;
     }
   }
