@@ -8,7 +8,6 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { LayoutComponent } from './layout/layout.component';
-import { ProductListComponent } from './product-list/product-list.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from '../components/navbar/navbar.component';
@@ -16,6 +15,7 @@ import { FooterComponent } from '../components/footer/footer.component';
 import { HeroComponent } from './home/hero/hero.component';
 import { CategoriesComponent } from './home/categories/categories.component';
 import { ProductsComponent } from './home/products/products.component';
+import { BreadcrumbComponent } from "../components/breadcrumb/breadcrumb.component";
 
 
 @NgModule({
@@ -26,7 +26,6 @@ import { ProductsComponent } from './home/products/products.component';
     CartComponent,
     CheckoutComponent,
     LayoutComponent,
-    ProductListComponent,
     LoginComponent,
     HeroComponent,
     CategoriesComponent,
@@ -37,7 +36,8 @@ import { ProductsComponent } from './home/products/products.component';
     FooterComponent,
     CommonModule,
     FormsModule,
-    CustomerRoutingModule
+    CustomerRoutingModule,
+    BreadcrumbComponent
   ]
 })
 export class CustomerModule { }

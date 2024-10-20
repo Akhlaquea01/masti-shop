@@ -16,7 +16,7 @@ export class ProductDetailComponent {
     private cartService: CartService) { }
 
   ngOnInit(): void {
-    const productId = +this.route.snapshot.paramMap.get('id'); // Get the product ID from the route
+    const productId = this.route.snapshot.paramMap.get('id'); // Get the product ID from the route
     this.product = this.productService.getProductById(productId); // Fetch product details
   }
 

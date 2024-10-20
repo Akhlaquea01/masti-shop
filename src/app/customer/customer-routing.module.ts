@@ -4,12 +4,12 @@ import { HomeComponent } from './home/home.component';
 
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { LayoutComponent } from './layout/layout.component';
 import { CategoryComponent } from './category/category.component';
 import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
+import { ProductsComponent } from './home/products/products.component';
 
 const routes: Routes = [
   {
@@ -24,7 +24,7 @@ const routes: Routes = [
       },
       {
         path: 'products/:categoryId',
-        component: ProductListComponent,
+        component: ProductsComponent,
         canActivate: [AuthGuard],
       },
       { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
