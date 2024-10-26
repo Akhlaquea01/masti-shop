@@ -91,5 +91,14 @@
                 </div>
             </div>
         </div>
+        <div *ngFor="let review of reviews">
+            <masTi-review [profileImage]="review.profileImage" [userName]="review.userName"
+                [isVerifiedBuyer]="review.isVerifiedBuyer" [ratings]="review.ratings"
+                [productQualityRating]="review.productQualityRating"
+                [purchasingExperienceRating]="review.purchasingExperienceRating" [reviewTitle]="review.reviewTitle"
+                [reviewContent]="review.reviewContent" [helpfulCount]="review.helpfulCount"
+                [unhelpfulCount]="review.unhelpfulCount">
+            </masTi-review>
+        </div>
     </div>
 </div>

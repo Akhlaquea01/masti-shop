@@ -36,4 +36,20 @@ export interface Product {
     rating?: number;      // Add rating property
     reviews?: number;     // Add reviews count
 }
+// review.model.ts
+export interface Review {
+    id: string;                   // Unique identifier for the review
+    productId: string;           // Identifier for the associated product
+    userId: number;              // Identifier for the user who submitted the review
+    userName: string;            // User's name
+    profileImage?: string;       // URL for the user's profile image (optional)
+    isVerifiedBuyer: boolean;     // Indicates if the buyer is verified
+    ratings: number;             // Overall rating (1-5)
+    productQualityRating: number; // Quality rating (1-5)
+    purchasingExperienceRating: number; // Experience rating (1-5)
+    reviewTitle: string;         // Title of the review
+    reviewContent: string;       // Content of the review
+    helpfulCount: number;        // Number of helpful votes
+    unhelpfulCount: number;      // Number of unhelpful votes
+}
 

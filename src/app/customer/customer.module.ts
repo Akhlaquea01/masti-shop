@@ -15,6 +15,7 @@ import { HeroComponent } from './home/hero/hero.component';
 import { CategoriesComponent } from './home/categories/categories.component';
 import { ProductsComponent } from './home/products/products.component';
 import { BreadcrumbComponent } from "../components/breadcrumb/breadcrumb.component";
+import { ReviewComponent } from './home/review/review.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { BreadcrumbComponent } from "../components/breadcrumb/breadcrumb.compone
     LoginComponent,
     HeroComponent,
     CategoriesComponent,
-    ProductsComponent
+    ProductsComponent,
+    ReviewComponent
   ],
   imports: [
     NavbarComponent,

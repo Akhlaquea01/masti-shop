@@ -1,10 +1,58 @@
 import { Injectable } from '@angular/core';
-import { Category, Product, Slide } from './interfaces';
+import { Category, Product, Review, Slide } from './interfaces';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
+  private reviews: Review[] = [
+    {
+      id: '1',
+      productId: '1',
+      userId: 1,
+      userName: 'John Doe',
+      profileImage: 'https://www.shutterstock.com/image-vector/business-woman-icon-avatar-symbol-260nw-790518412.jpg',
+      isVerifiedBuyer: true,
+      ratings: 4,
+      productQualityRating: 5,
+      purchasingExperienceRating: 4,
+      reviewTitle: 'Great Product!',
+      reviewContent: 'I loved using this product. It exceeded my expectations.',
+      helpfulCount: 10,
+      unhelpfulCount: 2,
+    },
+    {
+      id: '2',
+      productId: '1',
+      userId: 2,
+      userName: 'Jane Smith',
+      profileImage: 'https://www.shutterstock.com/image-vector/business-woman-icon-avatar-symbol-260nw-790518412.jpg',
+      isVerifiedBuyer: false,
+      ratings: 5,
+      productQualityRating: 5,
+      purchasingExperienceRating: 5,
+      reviewTitle: 'Amazing Quality!',
+      reviewContent: 'The quality of this product is top-notch. Highly recommend!',
+      helpfulCount: 15,
+      unhelpfulCount: 1,
+    },
+    {
+      id: '3',
+      productId: '3',
+      userId: 3,
+      userName: 'Alice Johnson',
+      profileImage: 'https://www.shutterstock.com/image-vector/business-woman-icon-avatar-symbol-260nw-790518412.jpg',
+      isVerifiedBuyer: true,
+      ratings: 3,
+      productQualityRating: 3,
+      purchasingExperienceRating: 4,
+      reviewTitle: 'Satisfactory',
+      reviewContent: 'The product is decent but has room for improvement.',
+      helpfulCount: 5,
+      unhelpfulCount: 3,
+    },
+    // Add more reviews as needed
+  ];
   private products: Product[] = [
     {
       id: '1',
@@ -179,5 +227,14 @@ export class ProductService {
   getCategoryNameById(categoryId: string): string | undefined {
     const category = this.categories.find(cat => cat.id === categoryId);
     return category ? category.name : 'Products'; // Return the name or undefined if not found
+  }
+  // Method to get a review by its ID
+  getReviewById(reviewId: string): Review | undefined {
+    return this.reviews.find(review => review.id === reviewId);
+  }
+
+  // Optionally, you can implement a method to get reviews by product ID
+  getReviewsByProductId(productId: string): Review[] {
+    return this.reviews.filter(review => review.productId === productId);
   }
 }
