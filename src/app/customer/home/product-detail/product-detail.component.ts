@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../product.service';
 import { CartService } from '../../cart.service';
+import { Product } from '../../interfaces';
 
 @Component({
   selector: 'masTi-product-detail',
@@ -11,25 +12,50 @@ import { CartService } from '../../cart.service';
 export class ProductDetailComponent implements OnInit {
   product: any;
   currentImage: string; // To store the currently displayed image
+  selectedColor: string;
+  selectedSize: string;
+  quantity: number = 1; // Default quantity
+  inWishlist: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
     private cartService: CartService
-  ) { }
+  ) { 
+    
+  }
 
   ngOnInit(): void {
     const productId = this.route.snapshot.paramMap.get('productId'); // Get the product ID from the route
     this.product = this.productService.getProductById(productId); // Fetch product details
     this.currentImage = this.product.images[0]; // Set the initial image
+    // Initialize with the first color and size if available
+    this.selectedColor = this.product.colors[0];
+    this.selectedSize = this.product.sizes[0];
   }
 
-  addToCart(product: any): void {
-    this.cartService.addToCart(product); // Call the addToCart method from CartService
-    alert(`${product.name} has been added to your cart!`); // Optional: Alert the user
+  changeImage(image: string) {
+    this.currentImage = image;
   }
 
-  changeImage(image: string): void {
-    this.currentImage = image; // Change the current image to the selected thumbnail
+  selectColor(color: string) {
+    this.selectedColor = color;
+  }
+
+  selectSize(size: string) {
+    this.selectedSize = size;
+  }
+
+  addToCart(product: Product) {
+    // Implement add to cart logic here
+    console.log('Adding to cart', {
+      product,
+      selectedColor: this.selectedColor,
+      selectedSize: this.selectedSize,
+      quantity: this.quantity,
+    });
+  }
+  toggleWishlist() {
+    this.inWishlist = !this.inWishlist; // Toggle the wishlist status
   }
 }
