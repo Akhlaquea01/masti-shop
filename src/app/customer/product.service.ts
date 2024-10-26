@@ -13,7 +13,19 @@ export class ProductService {
       price: '$20',
       originalPrice: '$30',
       categoryId: 'tshirts',
-      imageUrl: 'https://plus.unsplash.com/premium_photo-1673356302067-aac3b545a362?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dHNoaXJ0fGVufDB8fDB8fHww'
+      imageUrl: 'https://plus.unsplash.com/premium_photo-1673356302067-aac3b545a362?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dHNoaXJ0fGVufDB8fDB8fHww',
+      sku: 'SKU1234', // Add SKU
+      description: 'A stylish graphic t-shirt made from 100% cotton.',
+      rating: 4.5,
+      reviews: 25,
+      sizes: ['S', 'M', 'L', 'XL'],
+      colors: ['#FF5733', '#33FF57', '#3357FF'], // Example colors
+      features: ['High-quality print', 'Comfortable fit', 'Available in various sizes'],
+      images: [
+        'https://plus.unsplash.com/premium_photo-1673356302067-aac3b545a362?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dHNoaXJ0fGVufDB8fDB8fHww',
+        'https://images.unsplash.com/photo-1532202193792-e95ef22f1bce?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dHNoaXJ0fGVufDB8fDB8fHww',
+        'https://images.unsplash.com/photo-1515354941672-aa30aa737642?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJpbnRlZCUyMGZyYW1lc3xlbnwwfHwwfHx8MA%3D%3D'
+      ]
     },
     {
       id: '2',
@@ -22,7 +34,18 @@ export class ProductService {
       price: '$25',
       originalPrice: '$35',
       categoryId: 'tshirts',
-      imageUrl: 'https://images.unsplash.com/photo-1532202193792-e95ef22f1bce?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dHNoaXJ0fGVufDB8fDB8fHww'
+      imageUrl: 'https://images.unsplash.com/photo-1532202193792-e95ef22f1bce?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dHNoaXJ0fGVufDB8fDB8fHww',
+      sku: 'SKU5678',
+      description: 'A personalized t-shirt that showcases your favorite quote.',
+      rating: 4.8,
+      reviews: 30,
+      colors: ['#FFC300', '#FF5733', '#C70039'],
+      features: ['Customizable', 'Soft and breathable fabric', 'Perfect for any occasion'],
+      images: [
+        'https://images.unsplash.com/photo-1532202193792-e95ef22f1bce?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dHNoaXJ0fGVufDB8fDB8fHww',
+        'https://images.unsplash.com/photo-1620767188495-98ce5155895e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bXVnfGVufDB8fDB8fHww',
+        'https://images.unsplash.com/photo-1617508427654-14f1e3a4a8f4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJpbnRlZCUyMG11Z3N8ZW58MHx8MHx8fDA%3D'
+      ]
     },
 
     // Mugs
@@ -33,7 +56,18 @@ export class ProductService {
       price: '$10',
       originalPrice: '$15',
       categoryId: 'mugs',
-      imageUrl: 'https://images.unsplash.com/photo-1491720731493-223f97d92c21?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVnfGVufDB8fDB8fHww'
+      imageUrl: 'https://images.unsplash.com/photo-1491720731493-223f97d92c21?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVnfGVufDB8fDB8fHww',
+      sku: 'SKU9012',
+      description: 'A custom mug that adds a personal touch to your morning coffee.',
+      rating: 4.2,
+      reviews: 15,
+      colors: ['#FFC300', '#FF5733', '#C70039'],
+      features: ['Dishwasher safe', 'Microwave safe', 'Customizable design'],
+      images: [
+        'https://images.unsplash.com/photo-1491720731493-223f97d92c21?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVnfGVufDB8fDB8fHww',
+        'https://images.unsplash.com/photo-1620767188495-98ce5155895e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bXVnfGVufDB8fDB8fHww',
+        'https://images.unsplash.com/photo-1515354941672-aa30aa737642?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJpbnRlZCUyMGZyYW1lc3xlbnwwfHwwfHx8MA%3D%3D'
+      ]
     },
     {
       id: '4',
@@ -42,31 +76,21 @@ export class ProductService {
       price: '$12',
       originalPrice: '$18',
       categoryId: 'mugs',
-      imageUrl: 'https://images.unsplash.com/photo-1620767188495-98ce5155895e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bXVnfGVufDB8fDB8fHww'
+      imageUrl: 'https://images.unsplash.com/photo-1620767188495-98ce5155895e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bXVnfGVufDB8fDB8fHww',
+      sku: 'SKU3456',
+      description: 'A color-changing mug that reveals a design with hot liquids.',
+      rating: 4.6,
+      reviews: 20,
+      colors: ['#FF5733', '#33FF57', '#3357FF'],
+      features: ['Color-changing technology', 'High-quality ceramic', 'Unique design'],
+      images: [
+        'https://images.unsplash.com/photo-1620767188495-98ce5155895e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bXVnfGVufDB8fDB8fHww',
+        'https://images.unsplash.com/photo-1515354941672-aa30aa737642?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJpbnRlZCUyMGZyYW1lc3xlbnwwfHwwfHx8MA%3D%3D',
+        'https://images.unsplash.com/photo-1491720731493-223f97d92c21?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVnfGVufDB8fDB8fHww'
+      ]
     },
-
-    // Frames
-    {
-      id: '5',
-      name: 'Wooden Photo Frame',
-      brand: 'GiftShop Home',
-      price: '$18',
-      originalPrice: '$25',
-      categoryId: 'frames',
-      imageUrl: 'https://plus.unsplash.com/premium_photo-1681701679562-9911f560a6be?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-    },
-
-    // Accessories
-    {
-      id: '6',
-      name: 'Leather Keychain',
-      brand: 'GiftShop Accessories',
-      price: '$8',
-      originalPrice: '$12',
-      categoryId: 'accessories',
-      imageUrl: 'https://plus.unsplash.com/premium_photo-1681487704787-1d79d9f7ed0f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8a2V5JTIwY2hhaW58ZW58MHx8MHx8fDA%3D'
-    }
   ];
+
 
   private slides: Slide[] = [
     {

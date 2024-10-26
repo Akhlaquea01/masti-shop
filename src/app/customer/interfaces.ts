@@ -25,7 +25,15 @@ export interface Product {
     brand: string;
     price: string;
     originalPrice: string;
-    imageUrl: string;
     categoryId: string;
+    imageUrl: string;
+    description?: string;
+    colors?: string[];
+    sizes?: string[];
+    features?: string[];
+    images?: string[];
+    sku?: string;         // Add SKU property
+    rating?: number;      // Add rating property
+    reviews?: number;     // Add reviews count
 }
 

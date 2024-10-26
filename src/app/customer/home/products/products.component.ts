@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../product.service';
 import { Product } from '../../interfaces';
 
@@ -16,7 +16,8 @@ export class ProductsComponent implements OnInit {
   categoryId: string | null = null;
 
   constructor(private route: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private router: Router
   ) { }
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -31,5 +32,10 @@ export class ProductsComponent implements OnInit {
         ];
       }
     })
+  }
+
+  onProductClick(productId: string) {
+    // Redirect to the product details page
+    this.router.navigate(['/product-detail', productId]);
   }
 }

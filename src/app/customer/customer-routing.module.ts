@@ -4,7 +4,7 @@ import { HomeComponent } from './home/home.component';
 
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-// import { ProductDetailComponent } from './home/product-detail/product-detail.component';
+import { ProductDetailComponent } from './home/product-detail/product-detail.component';
 import { LayoutComponent } from './layout/layout.component';
 import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
@@ -26,6 +26,7 @@ const routes: Routes = [
         component: ProductsComponent,
         canActivate: [AuthGuard],
       },
+      { path: 'product-detail/:productId', component: ProductDetailComponent, canActivate: [AuthGuard] }, // Product detail route
       { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
       { path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard] },
       { path: '', redirectTo: 'login', pathMatch: 'full' },
