@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CartService } from '../../cart.service';
 import { CurrencyPipe, NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'masTi-wish-list',
   standalone: true,
-  imports: [NgFor,NgIf,CurrencyPipe],
+  imports: [NgFor, NgIf, CurrencyPipe],
   templateUrl: './wish-list.component.html',
   styleUrl: './wish-list.component.scss'
 })
 export class WishListComponent {
   cartItems: any[] = [];
-  open = false; // Controls the visibility of the sidebar
+  @Input() open = false;
+  @Output() onClose = new EventEmitter();
 
   products = [
     {
@@ -42,6 +43,7 @@ export class WishListComponent {
 
   toggleSidebar() {
     this.open = !this.open;
+    this.onClose.emit(this.open);
   }
 
   removeProduct(id: number) {

@@ -2,13 +2,18 @@ import { NgIf } from '@angular/common';
 import { Component, HostListener, ViewContainerRef, Injector } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CartService } from '../../customer/cart.service';
+import { WishListComponent } from "../../customer/home/wish-list/wish-list.component";
 @Component({
   selector: 'masTi-navbar',
   standalone: true,
-  imports: [NgIf, RouterModule],
+  imports: [NgIf, RouterModule, WishListComponent],
   templateUrl: './navbar.component.html'
 })
 export class NavbarComponent {
+  isOpen: boolean;
+toggleWishlist() {
+  this.isOpen = !this.isOpen;
+}
 
   constructor(private cartService: CartService,
     private viewContainerRef: ViewContainerRef, private injector: Injector
