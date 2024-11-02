@@ -1,23 +1,43 @@
 import { NgIf } from '@angular/common';
-import { Component, HostListener, ViewContainerRef, Injector } from '@angular/core';
+import { Component, HostListener, ViewContainerRef, Injector, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { CartService } from '../../customer/services/cart.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { WishListComponent } from "../../customer/home/wish-list/wish-list.component";
+import { AuthService } from '../../customer/services/auth.service';
+import { ModalComponent } from "../modal/modal.component";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'masTi-navbar',
   standalone: true,
-  imports: [NgIf, RouterModule, WishListComponent],
+  imports: [NgIf, RouterModule, WishListComponent, ModalComponent, FormsModule, ReactiveFormsModule],
   templateUrl: './navbar.component.html'
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
+  signupForm!: FormGroup;
   isOpen: boolean;
-toggleWishlist() {
-  this.isOpen = !this.isOpen;
-}
+  isLoggedIn: boolean;
+  toggleWishlist() {
+    this.isOpen = !this.isOpen;
+  }
 
-  constructor(private cartService: CartService,
-    private viewContainerRef: ViewContainerRef, private injector: Injector
+  constructor(
+    private authService: AuthService,
+    private viewContainerRef: ViewContainerRef,
+    private injector: Injector,
+    private fb: FormBuilder
   ) { }
+  ngOnInit(): void {
+    this.isLoggedIn = this.authService.isLoggedIn();
+    this.signupForm = this.fb.group({
+      username: ['', [Validators.required, Validators.minLength(3)]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ['', [Validators.required]],
+      name: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      phoneNumber: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      address: ['', [Validators.required]]
+    });
+  }
   async toggleSidebar() {
     // Lazy-load the module and component
     const { CustomerModule } = await import('../../customer/customer.module');
@@ -88,4 +108,27 @@ toggleWishlist() {
   // navigateToCategories() {
   //   this.router.navigate(['/home'], { fragment: 'categories' });
   // }
+
+  showModal = false;
+
+  openModal() {
+    this.showModal = true;
+  }
+
+  closeModal() {
+    this.showModal = false;
+  }
+
+  onConfirm() {
+    console.log("Confirmed action!");
+    this.signup();
+    this.closeModal();
+  }
+
+  signup() {
+
+
+    // Output form data for demonstration; handle your sign-up logic here
+    console.log('Form Submitted', this.signupForm.value);
+  }
 }

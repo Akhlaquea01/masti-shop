@@ -1,0 +1,22 @@
+<div *ngIf="showModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+        <!-- Modal Header -->
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-bold">{{ title }}</h2>
+            <button (click)="onClose()" class="text-gray-600 hover:text-gray-900">&times;</button>
+        </div>
+
+        <!-- Modal Content -->
+        <div class="mb-4">
+            <p *ngIf="content">{{ content }}</p>
+            <ng-content></ng-content>
+        </div>
+
+        <!-- Modal Actions -->
+        <div class="flex justify-end space-x-2">
+            <button (click)="onClose()" class="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300">Cancel</button>
+            <button (click)="onConfirm()"
+                class="px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600">Confirm</button>
+        </div>
+    </div>
+</div>

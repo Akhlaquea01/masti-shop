@@ -1,17 +1,46 @@
 <div class="flex justify-center items-center h-screen bg-gray-100">
     <div class="bg-white p-8 rounded shadow-md w-96">
-        <h2 class="text-2xl font-bold mb-4 text-center">Customer Login</h2>
+        <h2 class="text-2xl font-bold mb-4 text-center">
+            {{ isLoginMode ? 'Login' : 'Sign Up' }}
+        </h2>
 
-        <div *ngIf="loginError" class="text-red-500 mb-4">{{ loginError }}</div>
+        <!-- Error Messages -->
+        <div *ngIf="isLoginMode && loginError" class="text-red-500 mb-4">{{ loginError }}</div>
+        <div *ngIf="!isLoginMode && signupError" class="text-red-500 mb-4">{{ signupError }}</div>
 
+        <!-- Common Username and Password Fields -->
         <input type="text" placeholder="Username" [(ngModel)]="username"
             class="w-full p-2 mb-4 border border-gray-300 rounded" />
-
         <input type="password" placeholder="Password" [(ngModel)]="password"
             class="w-full p-2 mb-4 border border-gray-300 rounded" />
 
-        <button (click)="login()" class="bg-blue-500 text-white w-full p-2 rounded hover:bg-blue-600 transition">
-            Login
+        <!-- Confirm Password Field for Sign Up -->
+        <input *ngIf="!isLoginMode" type="password" placeholder="Confirm Password" [(ngModel)]="confirmPassword"
+            class="w-full p-2 mb-4 border border-gray-300 rounded" />
+
+        <!-- Additional Fields for Sign Up -->
+        <div *ngIf="!isLoginMode">
+            <input type="text" placeholder="Name" [(ngModel)]="name"
+                class="w-full p-2 mb-4 border border-gray-300 rounded" />
+            <input type="email" placeholder="Email" [(ngModel)]="email"
+                class="w-full p-2 mb-4 border border-gray-300 rounded" />
+            <input type="text" placeholder="Phone Number" [(ngModel)]="phoneNumber"
+                class="w-full p-2 mb-4 border border-gray-300 rounded" />
+            <input type="text" placeholder="Address" [(ngModel)]="address"
+                class="w-full p-2 mb-4 border border-gray-300 rounded" />
+        </div>
+
+        <!-- Submit Button -->
+        <button (click)="isLoginMode ? login() : signup()"
+            class="bg-blue-500 text-white w-full p-2 rounded hover:bg-blue-600 transition">
+            {{ isLoginMode ? 'Login' : 'Sign Up' }}
         </button>
+
+        <!-- Toggle Login/Signup Mode -->
+        <p class="mt-4 text-center">
+            <span (click)="toggleMode()" class="text-blue-500 cursor-pointer">
+                {{ isLoginMode ? 'Create an account' : 'Already have an account? Login' }}
+            </span>
+        </p>
     </div>
 </div>
