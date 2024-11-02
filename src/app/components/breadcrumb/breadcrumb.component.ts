@@ -9,7 +9,6 @@ interface BreadcrumbItem {
 @Component({
   selector: 'masTi-breadcrumb',
   templateUrl: './breadcrumb.component.html',
-  styleUrl: './breadcrumb.component.scss',
   standalone: true,
   imports: [RouterModule, NgIf, NgFor]
 })

@@ -6,8 +6,7 @@ import { Product, Review } from '../../interfaces';
 
 @Component({
   selector: 'masTi-product-detail',
-  templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.scss'] // Corrected 'styleUrl' to 'styleUrls'
+  templateUrl: './product-detail.component.html'
 })
 export class ProductDetailComponent implements OnInit {
 newReviewContent: any;

@@ -7,8 +7,7 @@ interface Product {
 
 @Component({
   selector: 'masTi-products',
-  templateUrl: './products.component.html',
-  styleUrl: './products.component.scss'
+  templateUrl: './products.component.html'
 })
 export class ProductsComponent {
   products: Product[] = [

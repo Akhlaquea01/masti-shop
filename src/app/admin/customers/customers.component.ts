@@ -7,8 +7,7 @@ interface Customer {
 }
 @Component({
   selector: 'masTi-customers',
-  templateUrl: './customers.component.html',
-  styleUrl: './customers.component.scss'
+  templateUrl: './customers.component.html'
 })
 export class CustomersComponent {
   customers: Customer[] = [

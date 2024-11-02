@@ -2,8 +2,7 @@ import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'masTi-layout',
-  templateUrl: './layout.component.html',
-  styleUrl: './layout.component.scss'
+  templateUrl: './layout.component.html'
 })
 export class LayoutComponent {
   isDropdownOpen = false;

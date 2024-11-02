@@ -3,8 +3,7 @@ import { CartService } from '../../cart.service';
 
 @Component({
   selector: 'masTi-cart',
-  templateUrl: './cart.component.html',
-  styleUrl: './cart.component.scss'
+  templateUrl: './cart.component.html'
 })
 export class CartComponent {
   cartItems: any[] = [];

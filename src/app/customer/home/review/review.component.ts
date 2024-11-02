@@ -2,8 +2,7 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'masTi-review',
-  templateUrl: './review.component.html',
-  styleUrl: './review.component.scss'
+  templateUrl: './review.component.html'
 })
 export class ReviewComponent {
   @Input() profileImage: string = '';

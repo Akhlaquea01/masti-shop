@@ -4,8 +4,7 @@ import { Category } from '../../interfaces';
 
 @Component({
   selector: 'masTi-categories',
-  templateUrl: './categories.component.html',
-  styleUrl: './categories.component.scss'
+  templateUrl: './categories.component.html'
 })
 export class CategoriesComponent {
   categories: Category[] = [];

@@ -6,8 +6,7 @@ import { CurrencyPipe, NgFor, NgIf } from '@angular/common';
   selector: 'masTi-wish-list',
   standalone: true,
   imports: [NgFor, NgIf, CurrencyPipe],
-  templateUrl: './wish-list.component.html',
-  styleUrl: './wish-list.component.scss'
+  templateUrl: './wish-list.component.html'
 })
 export class WishListComponent {
   cartItems: any[] = [];

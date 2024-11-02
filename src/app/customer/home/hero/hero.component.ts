@@ -4,8 +4,7 @@ import { ProductService } from '../../product.service';
 
 @Component({
   selector: 'masTi-hero',
-  templateUrl: './hero.component.html',
-  styleUrl: './hero.component.scss'
+  templateUrl: './hero.component.html'
 })
 export class HeroComponent implements OnInit {
 

@@ -8,8 +8,7 @@ interface Order {
 }
 @Component({
   selector: 'masTi-orders',
-  templateUrl: './orders.component.html',
-  styleUrl: './orders.component.scss'
+  templateUrl: './orders.component.html'
 })
 export class OrdersComponent {
   orders: Order[] = [

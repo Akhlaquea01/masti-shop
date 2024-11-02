@@ -5,8 +5,7 @@ import { Product } from '../interfaces';
 
 @Component({
   selector: 'masTi-home',
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  templateUrl: './home.component.html'
 })
 export class HomeComponent {
   products: Product[];
