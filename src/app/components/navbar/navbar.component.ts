@@ -16,7 +16,7 @@ export class NavbarComponent {
   async toggleSidebar() {
     // Lazy-load the module and component
     const { CustomerModule } = await import('../../customer/customer.module');
-    const { CartComponent } = await import('../../customer/cart/cart.component');
+    const { CartComponent } = await import('../../customer/home/cart/cart.component');
     // Register the module in the injector if needed
     const moduleRef = this.injector.get(CustomerModule);
 

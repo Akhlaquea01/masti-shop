@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
-import { CartService } from '../cart.service';
+import { CartService } from '../../cart.service';
+import { CurrencyPipe, NgFor, NgIf } from '@angular/common';
 
 @Component({
-  selector: 'masTi-cart',
-  templateUrl: './cart.component.html',
-  styleUrl: './cart.component.scss'
+  selector: 'masTi-wish-list',
+  standalone: true,
+  imports: [NgFor,NgIf,CurrencyPipe],
+  templateUrl: './wish-list.component.html',
+  styleUrl: './wish-list.component.scss'
 })
-export class CartComponent {
+export class WishListComponent {
   cartItems: any[] = [];
   open = false; // Controls the visibility of the sidebar
 
