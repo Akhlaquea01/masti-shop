@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { Slide } from '../../interfaces';
-import { ProductService } from '../../product.service';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'masTi-hero',

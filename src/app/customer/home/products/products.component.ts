@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductService } from '../../product.service';
 import { Product } from '../../interfaces';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'masTi-products',

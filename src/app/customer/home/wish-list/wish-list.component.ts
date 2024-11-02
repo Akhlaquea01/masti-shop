@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { CartService } from '../../cart.service';
+import { CartService } from '../../services/cart.service';
 import { CurrencyPipe, NgFor, NgIf } from '@angular/common';
 
 @Component({

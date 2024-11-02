@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-
-import { CartComponent } from './home/cart/cart.component';
 import { CheckoutComponent } from './home/checkout/checkout.component';
 import { ProductDetailComponent } from './home/product-detail/product-detail.component';
 import { LayoutComponent } from './layout/layout.component';
-import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
 import { ProductsComponent } from './home/products/products.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   {

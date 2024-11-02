@@ -1,7 +1,7 @@
 import { NgIf } from '@angular/common';
 import { Component, HostListener, ViewContainerRef, Injector } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { CartService } from '../../customer/cart.service';
+import { CartService } from '../../customer/services/cart.service';
 import { WishListComponent } from "../../customer/home/wish-list/wish-list.component";
 @Component({
   selector: 'masTi-navbar',
