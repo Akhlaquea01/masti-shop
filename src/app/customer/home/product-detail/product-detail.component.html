@@ -91,6 +91,28 @@
                 </div>
             </div>
         </div>
+        <hr
+            class="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:via-neutral-400" />
+        <!-- Review Section -->
+        <h4 class="text-xl font-semibold">Reviews</h4>
+        <!-- Review Comment Input Box -->
+        <div class="flex items-center space-x-4 mt-6 p-4">
+            <img class="w-10 h-10 rounded-full object-cover"
+                [src]="'https://i.pinimg.com/originals/e2/c7/31/e2c731e8e580c34621b500d52cf21742.jpg'"
+                alt="Your profile picture">
+            <div class="flex-1">
+                <textarea id="newReview" [(ngModel)]="newReviewContent" placeholder="Write your review..."
+                    class="w-full p-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 resize-none"
+                    rows="3"></textarea>
+                <div class="flex justify-end mt-2">
+                    <button (click)="submitReview()"
+                        class="px-4 py-1.5 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition ease-in-out">
+                        Submit Review
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <div *ngFor="let review of reviews">
             <masTi-review [profileImage]="review.profileImage" [userName]="review.userName"
                 [isVerifiedBuyer]="review.isVerifiedBuyer" [ratings]="review.ratings"

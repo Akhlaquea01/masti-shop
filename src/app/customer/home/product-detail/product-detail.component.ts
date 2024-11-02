@@ -10,6 +10,10 @@ import { Product, Review } from '../../interfaces';
   styleUrls: ['./product-detail.component.scss'] // Corrected 'styleUrl' to 'styleUrls'
 })
 export class ProductDetailComponent implements OnInit {
+newReviewContent: any;
+submitReview() {
+throw new Error('Method not implemented.');
+}
   reviews: Review[] = [];
   product: any;
   currentImage: string; // To store the currently displayed image
