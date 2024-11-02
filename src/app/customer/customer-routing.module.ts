@@ -26,8 +26,7 @@ const routes: Routes = [
         component: ProductsComponent,
         canActivate: [AuthGuard],
       },
-      { path: 'product-detail/:productId', component: ProductDetailComponent, canActivate: [AuthGuard] }, // Product detail route
-      { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
+      { path: 'product-detail/:productId', component: ProductDetailComponent, canActivate: [AuthGuard] },
       { path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard] },
       { path: '', redirectTo: 'login', pathMatch: 'full' },
     ],
