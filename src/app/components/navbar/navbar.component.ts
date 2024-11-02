@@ -1,7 +1,7 @@
 import { NgIf } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, ViewContainerRef, Injector } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { Router } from '@angular/router';
+import { CartService } from '../../customer/cart.service';
 @Component({
   selector: 'masTi-navbar',
   standalone: true,
@@ -9,6 +9,24 @@ import { Router } from '@angular/router';
   templateUrl: './navbar.component.html'
 })
 export class NavbarComponent {
+
+  constructor(private cartService: CartService,
+    private viewContainerRef: ViewContainerRef, private injector: Injector
+  ) { }
+  async toggleSidebar() {
+    // Lazy-load the module and component
+    const { CustomerModule } = await import('../../customer/customer.module');
+    const { CartComponent } = await import('../../customer/cart/cart.component');
+    // Register the module in the injector if needed
+    const moduleRef = this.injector.get(CustomerModule);
+
+    // Create the component and add it to the view
+    const componentRef = this.viewContainerRef.createComponent(CartComponent, { injector: this.injector });
+
+    // Optionally, interact with the component instance
+    componentRef.instance.open = !componentRef.instance.open;
+    // this.cartService.toggleSidebar.next(true);
+  }
   isProfileDropdownOpen = false;
   isMobileMenuOpen = false;
   isCategoryDropdownOpen = false;
