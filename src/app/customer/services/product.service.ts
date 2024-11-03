@@ -373,6 +373,7 @@ export class ProductService {
       badge: 'Hot Deal',
       badgeColor: 'bg-red-500 text-white',
       logo: 'assets/images/offer.jpg',
+      url: "/products",
       product: 'T-shirts and Hoodies'
     },
     {
@@ -385,6 +386,7 @@ export class ProductService {
       badge: 'Mega Sale',
       badgeColor: 'bg-pink-400 text-white',
       logo: 'assets/images/offer.jpg',
+      url: "/products",
       product: 'Gift Items'
     },
     {
@@ -396,6 +398,7 @@ export class ProductService {
       promoText: '*While supplies last',
       badge: 'School Sale',
       badgeColor: 'bg-blue-400 text-white',
+      url: "/products",
       logo: 'assets/images/offer.jpg',
       product: 'Stationery and Supplies'
     },
@@ -408,6 +411,7 @@ export class ProductService {
       promoText: '*Join our membership for more discounts',
       badge: 'Exclusive Offer',
       badgeColor: 'bg-purple-500 text-white',
+      url: "/products",
       logo: 'assets/images/offer.jpg',
       product: 'Tech Gadgets'
     },
@@ -420,6 +424,7 @@ export class ProductService {
       promoText: '*Only for new customers',
       badge: 'Limited Offer',
       badgeColor: 'bg-green-500 text-white',
+      url: "/products",
       logo: 'assets/images/offer.jpg',
       product: 'Home Decor'
     }

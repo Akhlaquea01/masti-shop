@@ -19,6 +19,7 @@ export interface Slide {
     badgeColor: string;
     logo: string;
     product: string;
+    url: string;
 }
 
 
