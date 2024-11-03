@@ -9,6 +9,7 @@ import { ProductService } from '../../services/product.service';
   templateUrl: './product-detail.component.html'
 })
 export class ProductDetailComponent implements OnInit {
+  Math = Math;
   newReviewContent: any;
   breadcrumbItems: ({ label: string; url: string; } | { label: string; url?: undefined; })[] = [];
   submitReview() {
@@ -21,6 +22,17 @@ export class ProductDetailComponent implements OnInit {
   selectedSize: string;
   quantity: number = 1; // Default quantity
   inWishlist: boolean = false;
+  averageRating: number = 0;
+  totalRatings: number = this.reviews.length;
+
+  ratingCounts = [
+    { stars: 5, percentage: 50 },
+    { stars: 4, percentage: 25 },
+    { stars: 3, percentage: 10 },
+    { stars: 2, percentage: 5 },
+    { stars: 1, percentage: 10 }
+  ];
+
 
   constructor(
     private route: ActivatedRoute,
@@ -34,6 +46,7 @@ export class ProductDetailComponent implements OnInit {
     const productId = this.route.snapshot.paramMap.get('productId'); // Get the product ID from the route
     this.product = this.productService.getProductById(productId); // Fetch product details
     this.reviews = this.productService.getReviewsByProductId(productId);
+    this.calculateAverageRating();
     this.currentImage = this.product.images[0]; // Set the initial image
     // Initialize with the first color and size if available
     this.breadcrumbItems = [
@@ -68,5 +81,10 @@ export class ProductDetailComponent implements OnInit {
   }
   toggleWishlist() {
     this.inWishlist = !this.inWishlist; // Toggle the wishlist status
+  }
+
+  calculateAverageRating(): void {
+    const total = this.reviews.reduce((sum, review) => sum + review.ratings, 0);
+    this.averageRating = total / this.totalRatings;
   }
 }

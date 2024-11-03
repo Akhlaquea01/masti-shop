@@ -33,62 +33,19 @@
                 </svg>
             </ng-container>
         </div>
-        <div class="flex items-center mt-4 text-gray-600">
-            <div class="flex items-center">
-                <span class="text-sm">Product Quality</span>
-                <div class="flex items-center ml-2">
-                    <ng-container *ngFor="let star of [].constructor(5); let i = index">
-                        <svg *ngIf="i < productQualityRating" class="w-3 h-3 fill-current text-yellow-600"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <path
-                                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                        </svg>
-                        <svg *ngIf="i >= productQualityRating" class="w-3 h-3 fill-current text-gray-400"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <path
-                                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                        </svg>
-                    </ng-container>
-                </div>
-            </div>
-            <div class="flex items-center ml-4">
-                <span class="text-sm">Purchasing Experience</span>
-                <div class="flex items-center ml-2">
-                    <ng-container *ngFor="let star of [].constructor(5); let i = index">
-                        <svg *ngIf="i < purchasingExperienceRating" class="w-3 h-3 fill-current text-yellow-600"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <path
-                                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                        </svg>
-                        <svg *ngIf="i >= purchasingExperienceRating" class="w-3 h-3 fill-current text-gray-400"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <path
-                                d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                        </svg>
-                    </ng-container>
-                </div>
-            </div>
-        </div>
         <div class="mt-3">
-            <span class="font-bold">{{ reviewTitle }}</span>
             <p class="mt-1">{{ reviewContent }}</p>
         </div>
-        <div class="flex items-center justify-between mt-4 text-sm text-gray-600 fill-current">
-            <button class="flex items-center">
-                <i class="fa fa-share"></i>
-                <span class="ml-2">Share</span>
+        <div class="flex items-end ml-auto">
+            <span>Was this review helpful?</span>
+            <button class="flex items-center ml-6">
+                <i class="fa fa-thumbs-up"></i>
+                <span class="ml-2">{{ helpfulCount }}</span>
             </button>
-            <div class="flex items-center">
-                <span>Was this review helpful?</span>
-                <button class="flex items-center ml-6">
-                    <i class="fa fa-thumbs-up"></i>
-                    <span class="ml-2">{{ helpfulCount }}</span>
-                </button>
-                <button class="flex items-center ml-4">
-                    <i class="fa fa-thumbs-down"></i>
-                    <span class="ml-2">{{ unhelpfulCount }}</span>
-                </button>
-            </div>
+            <button class="flex items-center ml-4">
+                <i class="fa fa-thumbs-down"></i>
+                <span class="ml-2">{{ unhelpfulCount }}</span>
+            </button>
         </div>
     </div>
 </div>
