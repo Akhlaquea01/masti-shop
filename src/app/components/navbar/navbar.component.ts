@@ -1,6 +1,6 @@
 import { NgIf } from '@angular/common';
 import { Component, HostListener, ViewContainerRef, Injector, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { WishListComponent } from "../../customer/home/wish-list/wish-list.component";
 import { AuthService } from '../../customer/services/auth.service';
@@ -14,17 +14,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class NavbarComponent implements OnInit {
   signupForm!: FormGroup;
-  isOpen: boolean;
-  isLoggedIn: boolean;
-  toggleWishlist() {
-    this.isOpen = !this.isOpen;
-  }
+  isOpen: boolean = false;
+  isLoggedIn: boolean = false;
+  isProfileDropdownOpen = false;
+  isMobileMenuOpen = false;
+  isCategoryDropdownOpen = false;
+  isMobileCategoryDropdownOpen = false;
+  showModal = false;
 
   constructor(
     private authService: AuthService,
     private viewContainerRef: ViewContainerRef,
     private injector: Injector,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) { }
   ngOnInit(): void {
     this.isLoggedIn = this.authService.isLoggedIn();
@@ -38,7 +41,7 @@ export class NavbarComponent implements OnInit {
       address: ['', [Validators.required]]
     });
   }
-  async toggleSidebar() {
+  async toggleCart() {
     // Lazy-load the module and component
     const { CustomerModule } = await import('../../customer/customer.module');
     const { CartComponent } = await import('../../customer/home/cart/cart.component');
@@ -50,17 +53,14 @@ export class NavbarComponent implements OnInit {
 
     // Optionally, interact with the component instance
     componentRef.instance.open = !componentRef.instance.open;
-    // this.cartService.toggleSidebar.next(true);
+    // this.cartService.toggleCart.next(true);
   }
-  isProfileDropdownOpen = false;
-  isMobileMenuOpen = false;
-  isCategoryDropdownOpen = false;
-  isMobileCategoryDropdownOpen = false;
 
-  // Toggle functions
+
   toggleProfileDropdown() {
+    this.isLoggedIn = this.authService.isLoggedIn();
     this.isProfileDropdownOpen = !this.isProfileDropdownOpen;
-    this.isCategoryDropdownOpen = false; // Close category dropdown if profile is opened
+    this.isCategoryDropdownOpen = false;
   }
 
   toggleMobileMenu() {
@@ -69,7 +69,7 @@ export class NavbarComponent implements OnInit {
 
   toggleCategoryDropdown() {
     this.isCategoryDropdownOpen = !this.isCategoryDropdownOpen;
-    this.isProfileDropdownOpen = false; // Close profile dropdown if category is opened
+    this.isProfileDropdownOpen = false;
   }
 
   toggleMobileCategoryDropdown() {
@@ -79,8 +79,8 @@ export class NavbarComponent implements OnInit {
   selectCategory(category: string) {
     console.log(`Selected category: ${category}`);
     this.isMobileMenuOpen = false;
-    this.isCategoryDropdownOpen = false; // Close the dropdown after selection
-    this.isMobileCategoryDropdownOpen = false; // Close mobile dropdown after selection
+    this.isCategoryDropdownOpen = false;
+    this.isMobileCategoryDropdownOpen = false;
   }
 
   // Close dropdowns when clicking outside
@@ -104,12 +104,8 @@ export class NavbarComponent implements OnInit {
       this.isMobileCategoryDropdownOpen = false;
     }
   }
-  // using from html so commented here
-  // navigateToCategories() {
-  //   this.router.navigate(['/home'], { fragment: 'categories' });
-  // }
 
-  showModal = false;
+
 
   openModal() {
     this.showModal = true;
@@ -120,15 +116,20 @@ export class NavbarComponent implements OnInit {
   }
 
   onConfirm() {
-    console.log("Confirmed action!");
     this.signup();
     this.closeModal();
   }
 
   signup() {
-
-
-    // Output form data for demonstration; handle your sign-up logic here
     console.log('Form Submitted', this.signupForm.value);
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
+
+  toggleWishlist() {
+    this.isOpen = !this.isOpen;
   }
 }

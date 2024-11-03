@@ -45,8 +45,8 @@ export class WishListComponent {
     this.onClose.emit(this.open);
   }
 
-  removeProduct(id: number) {
-    this.products = this.products.filter(product => product.id !== id);
+  addToCart(id: number) {
+    // this.products = this.products.filter(product => product.id !== id);
   }
 
   constructor(private cartService: CartService) { }

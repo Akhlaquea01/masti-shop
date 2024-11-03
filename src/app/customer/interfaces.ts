@@ -52,3 +52,17 @@ export interface Review {
     unhelpfulCount: number;
 }
 
+export interface User {
+    name: string;
+    email: string;
+    password: string;
+    address?: {
+        street?: string;
+        city?: string;
+        state?: string;
+        zip?: string;
+    };
+    role: 'user' | 'admin';
+    wishlist?: any[];
+    cart?: any[];
+}

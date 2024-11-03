@@ -11,12 +11,24 @@ export class LoginComponent {
   username = '';
   password = '';
   confirmPassword = '';
-  name = '';
-  email = '';
-  phoneNumber = '';
-  address = '';
+  // name = '';
+  // email = '';
   loginError = '';
   signupError = '';
+  signupData = {
+    name: '',
+    email: '',
+    password: '',
+    address: {
+      street: '',
+      city: '',
+      state: '',
+      zip: ''
+    },
+    role: 'user',
+    wishlist: [],
+    cart: []
+  };
 
 
   constructor(private authService: AuthService, private router: Router) { }
@@ -34,33 +46,14 @@ export class LoginComponent {
   }
 
   signup() {
-    if (!this.username || !this.password || !this.confirmPassword || !this.name || !this.email || !this.phoneNumber || !this.address) {
-      this.signupError = "Please fill in all fields.";
-      return;
-    }
-    if (this.password !== this.confirmPassword) {
-      this.signupError = "Passwords do not match.";
-      return;
-    }
-    console.log("Signed up with:", {
-      username: this.username,
-      name: this.name,
-      email: this.email,
-      phoneNumber: this.phoneNumber,
-      address: this.address,
-      password: this.password
-    });
+    
+    // if (this.password !== this.confirmPassword) {
+    //   this.signupError = "Passwords do not match.";
+    //   return;
+    // }
   }
 
   clearForm() {
-    this.username = '';
-    this.password = '';
-    this.confirmPassword = '';
-    this.name = '';
-    this.email = '';
-    this.phoneNumber = '';
-    this.address = '';
-    this.loginError = '';
-    this.signupError = '';
+    
   }
 }

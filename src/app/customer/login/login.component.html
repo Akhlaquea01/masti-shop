@@ -20,13 +20,32 @@
 
         <!-- Additional Fields for Sign Up -->
         <div *ngIf="!isLoginMode">
-            <input type="text" placeholder="Name" [(ngModel)]="name"
+            <input type="text" placeholder="Name" [(ngModel)]="signupData.name"
                 class="w-full p-2 mb-4 border border-gray-300 rounded" />
-            <input type="email" placeholder="Email" [(ngModel)]="email"
+            <input type="email" placeholder="Email" [(ngModel)]="signupData.email"
                 class="w-full p-2 mb-4 border border-gray-300 rounded" />
-            <input type="text" placeholder="Phone Number" [(ngModel)]="phoneNumber"
+
+            <!-- Address Fields -->
+            <input type="text" placeholder="Street" [(ngModel)]="signupData.address.street"
                 class="w-full p-2 mb-4 border border-gray-300 rounded" />
-            <input type="text" placeholder="Address" [(ngModel)]="address"
+            <input type="text" placeholder="City" [(ngModel)]="signupData.address.city"
+                class="w-full p-2 mb-4 border border-gray-300 rounded" />
+            <input type="text" placeholder="State" [(ngModel)]="signupData.address.state"
+                class="w-full p-2 mb-4 border border-gray-300 rounded" />
+            <input type="text" placeholder="Zip" [(ngModel)]="signupData.address.zip"
+                class="w-full p-2 mb-4 border border-gray-300 rounded" />
+
+            <!-- Role Selector -->
+            <select [(ngModel)]="signupData.role" class="w-full p-2 mb-4 border border-gray-300 rounded"
+                disabled="true">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
+
+            <!-- Wishlist and Cart (for demonstration only, typically these would be populated differently) -->
+            <input type="text" placeholder="Wishlist (Comma-separated)" [(ngModel)]="signupData.wishlist"
+                class="w-full p-2 mb-4 border border-gray-300 rounded" />
+            <input type="text" placeholder="Cart (Comma-separated)" [(ngModel)]="signupData.cart"
                 class="w-full p-2 mb-4 border border-gray-300 rounded" />
         </div>
 
