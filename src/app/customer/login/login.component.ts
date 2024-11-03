@@ -11,6 +11,8 @@ export class LoginComponent implements OnInit {
   isLoginMode: boolean = true;
   confirmPassword: string = '';
   signupData: User = {
+    id: '',
+    phone: null,
     name: '',
     email: '',
     password: '',
@@ -55,6 +57,8 @@ export class LoginComponent implements OnInit {
 
   clearForm() {
     this.signupData = {
+      id: '',
+      phone: null,
       name: '',
       email: '',
       password: '',

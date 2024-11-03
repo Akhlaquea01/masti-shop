@@ -18,6 +18,8 @@
         <div *ngIf="!isLoginMode">
             <input type="text" placeholder="Name" [(ngModel)]="signupData.name"
                 class="w-full p-2 mb-4 border border-gray-300 rounded" />
+            <input type="number" placeholder="Phone" [(ngModel)]="signupData.phone"
+                class="w-full p-2 mb-4 border border-gray-300 rounded" />
 
             <!-- Address Fields -->
             <input type="text" placeholder="Street" [(ngModel)]="signupData.address.street"
