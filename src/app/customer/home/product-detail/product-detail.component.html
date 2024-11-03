@@ -100,18 +100,8 @@
             <div class="lg:col-span-4 col-span-1">
                 <!-- Form to submit a review -->
                 <form action="" method="POST" class="space-y-4">
-                    <div class="flex justify-start items-center space-x-1 mb-4">
-                        <input type="radio" id="5-stars" name="rating" value="5" class="hidden">
-                        <label for="5-stars" class="text-yellow-400 text-2xl cursor-pointer hover:scale-110">★</label>
-                        <input type="radio" id="4-stars" name="rating" value="4" class="hidden">
-                        <label for="4-stars" class="text-yellow-400 text-2xl cursor-pointer hover:scale-110">★</label>
-                        <input type="radio" id="3-stars" name="rating" value="3" class="hidden">
-                        <label for="3-stars" class="text-yellow-400 text-2xl cursor-pointer hover:scale-110">★</label>
-                        <input type="radio" id="2-stars" name="rating" value="2" class="hidden">
-                        <label for="2-stars" class="text-yellow-400 text-2xl cursor-pointer hover:scale-110">★</label>
-                        <input type="radio" id="1-star" name="rating" value="1" class="hidden">
-                        <label for="1-star" class="text-yellow-400 text-2xl cursor-pointer hover:scale-110">★</label>
-                    </div>
+                    <masTi-rating [filledStars]="0" [totalStars]="5" [filledColor]="'orange'" [emptyColor]="'lightgray'"
+                        [editable]="true" (ratingSelected)="onRatingSelected($event)"></masTi-rating>
                     <textarea id="review" name="review" rows="4" required
                         class="block w-full p-3 text-sm text-gray-900 bg-gray-50 rounded-md border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
                         placeholder="Write your review"></textarea>
@@ -122,18 +112,20 @@
                     </div>
                 </form>
             </div>
-        
+
             <!-- Dynamic star rating overview -->
             <div class="lg:col-span-2 hidden lg:flex flex-col space-y-4">
                 <div class="flex items-center">
-                    <span class="text-yellow-400 text-xl">★★★★★</span>
-                    <p class="ml-2 text-sm font-medium text-gray-900">4.2 out of 5</p>
+                    <masTi-rating [filledStars]="averageRating" [totalStars]="5" [filledColor]="'orange'" [emptyColor]="'lightgray'"
+                        [editable]="false" (ratingSelected)="onRatingSelected($event)"></masTi-rating>
+                    <p class="ml-2 text-sm font-medium text-gray-900">{{averageRating}} out of 5</p>
                 </div>
                 <p class="text-sm font-medium text-gray-500">{{reviews.length}} global ratings</p>
-        
+
                 <!-- Loop through ratingCounts array -->
                 <div *ngFor="let rating of ratingCounts" class="flex items-center">
-                    <span class="text-sm font-medium text-blue-600 cursor-pointer shrink-0">{{ rating.stars }} star</span>
+                    <span class="text-sm font-medium text-blue-600 cursor-pointer shrink-0">{{ rating.stars }}
+                        star</span>
                     <div class="w-3/4 h-4 mx-2 bg-gray-200 rounded">
                         <div class="h-4 bg-yellow-400 rounded" [style.width.%]="rating.percentage"></div>
                     </div>
@@ -145,9 +137,8 @@
 
         <div *ngFor="let review of reviews">
             <masTi-review [profileImage]="review.profileImage" [userName]="review.userName"
-                [isVerifiedBuyer]="review.userId === '1'" [ratings]="review.ratings"
+                [isVerifiedBuyer]="true" [ratings]="review.ratings"
                 [productQualityRating]="review.productQualityRating"
-                [purchasingExperienceRating]="review.purchasingExperienceRating" [reviewTitle]="review.reviewTitle"
                 [reviewContent]="review.comment" [helpfulCount]="review.helpfulCount"
                 [unhelpfulCount]="review.unhelpfulCount">
             </masTi-review>

@@ -16,6 +16,7 @@ import { CategoriesComponent } from './home/categories/categories.component';
 import { ProductsComponent } from './home/products/products.component';
 import { BreadcrumbComponent } from "../components/breadcrumb/breadcrumb.component";
 import { ReviewComponent } from './home/review/review.component';
+import { RatingComponent } from "../components/rating/rating.component";
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ReviewComponent } from './home/review/review.component';
     CommonModule,
     FormsModule,
     CustomerRoutingModule,
-    BreadcrumbComponent
-  ]
+    BreadcrumbComponent,
+    RatingComponent
+]
 })
 export class CustomerModule { }

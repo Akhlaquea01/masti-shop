@@ -9,6 +9,10 @@ import { ProductService } from '../../services/product.service';
   templateUrl: './product-detail.component.html'
 })
 export class ProductDetailComponent implements OnInit {
+  onRatingSelected($event: number) {
+    console.log($event);
+
+  }
   Math = Math;
   newReviewContent: any;
   breadcrumbItems: ({ label: string; url: string; } | { label: string; url?: undefined; })[] = [];
@@ -23,15 +27,8 @@ export class ProductDetailComponent implements OnInit {
   quantity: number = 1; // Default quantity
   inWishlist: boolean = false;
   averageRating: number = 0;
-  totalRatings: number = this.reviews.length;
 
-  ratingCounts = [
-    { stars: 5, percentage: 50 },
-    { stars: 4, percentage: 25 },
-    { stars: 3, percentage: 10 },
-    { stars: 2, percentage: 5 },
-    { stars: 1, percentage: 10 }
-  ];
+  ratingCounts = [ ];
 
 
   constructor(
@@ -85,6 +82,13 @@ export class ProductDetailComponent implements OnInit {
 
   calculateAverageRating(): void {
     const total = this.reviews.reduce((sum, review) => sum + review.ratings, 0);
-    this.averageRating = total / this.totalRatings;
+    this.averageRating = total / this.reviews.length;
+    this.ratingCounts = Array.from({ length: 5 }, (_, i) => {
+      const star = 5 - i; // Star rating from 5 down to 1
+      const count = this.reviews.filter(review => review.ratings === star).length;
+      const percentage = (count / this.reviews.length) * 100;
+
+      return { stars: star, percentage: Math.round(percentage) }; // Rounded to the nearest integer
+    });
   }
 }

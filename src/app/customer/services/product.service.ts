@@ -16,8 +16,64 @@ export class ProductService {
       reviewTitle: "Great T-shirt!",
       comment: "The T-shirt is very comfortable and fits perfectly. Quality is good for the price.",
       helpfulCount: 10,
+      userName: "Kriti",
+      profileImage: "https://expertphotography.b-cdn.net/wp-content/uploads/2018/10/cool-profile-pictures-retouching-1.jpg",
+      unhelpfulCount: 1
+    },
+    {
+      id: "r103",
+      productId: "101", // T-shirt
+      userId: "u001",
+      ratings: 3,
+      productQualityRating: 4,
+      purchasingExperienceRating: 5,
+      reviewTitle: "Great T-shirt!",
+      comment: "The T-shirt is very comfortable and fits perfectly. Quality is good for the price.",
+      helpfulCount: 10,
+      userName: "Neha",
+      profileImage: "https://plus.unsplash.com/premium_photo-1676838436692-8bf51640749c?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      unhelpfulCount: 1
+    },
+    {
+      id: "r104",
+      productId: "101", // T-shirt
+      userId: "u001",
+      ratings: 2,
+      productQualityRating: 4,
+      purchasingExperienceRating: 5,
+      reviewTitle: "Great T-shirt!",
+      comment: "The T-shirt is very comfortable and fits perfectly. Quality is good for the price.",
+      helpfulCount: 10,
+      userName: "Aksh",
+      profileImage: "https://4.bp.blogspot.com/-4XkgxCUCJOk/Vn-MsRun94I/AAAAAAAAGrs/q-B9vXZYNuA/s640/smart-girls-images-for-facebook-4.jpg",
+      unhelpfulCount: 1
+    },
+    {
+      id: "r105",
+      productId: "101", // T-shirt
+      userId: "u001",
+      ratings: 1,
+      productQualityRating: 4,
+      purchasingExperienceRating: 5,
+      reviewTitle: "Great T-shirt!",
+      comment: "The T-shirt is very comfortable and fits perfectly. Quality is good for the price.",
+      helpfulCount: 10,
       userName: "John Doe",
       profileImage: "https://images.unsplash.com/photo-1522724514897-24b0eb7ba3ea?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      unhelpfulCount: 1
+    },
+    {
+      id: "r106",
+      productId: "101", // T-shirt
+      userId: "u001",
+      ratings: 5,
+      productQualityRating: 4,
+      purchasingExperienceRating: 5,
+      reviewTitle: "Great T-shirt!",
+      comment: "The T-shirt is very comfortable and fits perfectly. Quality is good for the price.",
+      helpfulCount: 10,
+      userName: "Choti",
+      profileImage: "https://th.bing.com/th/id/OIP.8EKhYKcRIV237mI4WYTotwHaHa?w=498&h=498&rs=1&pid=ImgDetMain",
       unhelpfulCount: 1
     },
     {
