@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CartService } from '../../services/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'masTi-cart',
@@ -44,7 +45,10 @@ export class CartComponent {
     this.products = this.products.filter(product => product.id !== id);
   }
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService,
+    private router: Router
+
+  ) { }
 
   ngOnInit(): void {
     // this.cartService.toggleSidebar.subscribe(open => this.open = open);
@@ -59,5 +63,9 @@ export class CartComponent {
     this.cartItems = this.cartItems.filter(cartItem => cartItem !== item); // Remove the item from the local cartItems array
     this.cartService.clearCart(); // Clear the cart in the service
     this.cartItems.forEach(cartItem => this.cartService.addToCart(cartItem)); // Re-add remaining items to the service
+  }
+  navigateToCheckout() {
+    this.router.navigate(['/checkout']);
+    this.open=false;
   }
 }
