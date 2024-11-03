@@ -32,13 +32,21 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.isLoggedIn = this.authService.isLoggedIn();
     this.signupForm = this.fb.group({
-      username: ['', [Validators.required, Validators.minLength(3)]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', [Validators.required]],
-      name: ['', [Validators.required]],
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+      confirmPassword: ['', Validators.required],
+      name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phoneNumber: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
-      address: ['', [Validators.required]]
+      phoneNumber: [''],
+      address: this.fb.group({
+        street: [''],
+        city: [''],
+        state: [''],
+        zip: [''],
+      }),
+      role: ['user', Validators.required],
+      wishlist: [''],
+      cart: ['']
     });
   }
   async toggleCart() {
@@ -59,6 +67,10 @@ export class NavbarComponent implements OnInit {
 
   toggleProfileDropdown() {
     this.isLoggedIn = this.authService.isLoggedIn();
+    const storedUser = JSON.parse(localStorage.getItem('user') || 'null');
+    if (storedUser) {
+      this.signupForm.patchValue(storedUser);
+    }
     this.isProfileDropdownOpen = !this.isProfileDropdownOpen;
     this.isCategoryDropdownOpen = false;
   }

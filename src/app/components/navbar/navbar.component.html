@@ -45,7 +45,8 @@
                 </div>
             </div>
 
-            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 gap-x-4">
+            <div
+                class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 gap-x-4">
                 <button type="button"
                     class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                     (click)="toggleCart()">
@@ -78,11 +79,12 @@
                         class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5"
                         role="menu" aria-orientation="vertical">
                         <span class="block px-4 py-2 text-sm text-gray-700 cursor-pointer" *ngIf="isLoggedIn"
-                            (click)="openModal()">Your
-                            Profile</span>
-                        <span class="block px-4 py-2 text-sm text-gray-700 cursor-pointer" *ngIf="isLoggedIn" (click)="logout()">Sign
+                            (click)="openModal()">{{signupForm.value.name}}</span>
+                        <span class="block px-4 py-2 text-sm text-gray-700 cursor-pointer" *ngIf="isLoggedIn"
+                            (click)="logout()">Sign
                             out</span>
-                        <span class="block px-4 py-2 text-sm text-gray-700 cursor-pointer" *ngIf="!isLoggedIn">Sign In</span>
+                        <span class="block px-4 py-2 text-sm text-gray-700 cursor-pointer" *ngIf="!isLoggedIn">Sign
+                            In</span>
                     </div>
                 </div>
             </div>
@@ -124,25 +126,30 @@
 
     <!-- Reactive Form -->
     <form [formGroup]="signupForm" (ngSubmit)="signup()">
-        <input type="text" placeholder="Username" formControlName="username"
+        <!-- Email and Password Fields -->
+        <input type="text" placeholder="Email" formControlName="email"
             class="w-full p-2 mb-4 border border-gray-300 rounded" />
         <input type="password" placeholder="Password" formControlName="password"
             class="w-full p-2 mb-4 border border-gray-300 rounded" />
-        <input type="password" placeholder="Confirm Password" formControlName="confirmPassword"
-            class="w-full p-2 mb-4 border border-gray-300 rounded" />
+
+        <!-- Name and Email Fields -->
         <input type="text" placeholder="Name" formControlName="name"
             class="w-full p-2 mb-4 border border-gray-300 rounded" />
-        <input type="email" placeholder="Email" formControlName="email"
-            class="w-full p-2 mb-4 border border-gray-300 rounded" />
-        <input type="text" placeholder="Phone Number" formControlName="phoneNumber"
-            class="w-full p-2 mb-4 border border-gray-300 rounded" />
-        <input type="text" placeholder="Address" formControlName="address"
-            class="w-full p-2 mb-4 border border-gray-300 rounded" />
 
-        <!-- Sign-Up Button -->
-        <!-- <button type="submit" class="bg-blue-500 text-white w-full p-2 rounded hover:bg-blue-600 transition">
-            Sign Up
-        </button> -->
+        <!-- Address Fields -->
+         <ng-container formGroupName="address">
+             <input type="text" placeholder="Street" formControlName="street"
+                 class="w-full p-2 mb-4 border border-gray-300 rounded" />
+             <input type="text" placeholder="City" formControlName="city"
+                 class="w-full p-2 mb-4 border border-gray-300 rounded" />
+             <input type="text" placeholder="State" formControlName="state"
+                 class="w-full p-2 mb-4 border border-gray-300 rounded" />
+             <input type="text" placeholder="Zip" formControlName="zip"
+                 class="w-full p-2 mb-4 border border-gray-300 rounded" />
+         </ng-container>
+
+
     </form>
+
 
 </masTi-modal>
