@@ -1,6 +1,6 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 interface BreadcrumbItem {
   label: string;
@@ -14,4 +14,11 @@ interface BreadcrumbItem {
 })
 export class BreadcrumbComponent {
   @Input() items: BreadcrumbItem[] = [];
+
+  constructor(private router: Router) { }
+  navigateToUrl(url: string) {
+    console.log(url);
+    
+    this.router.navigate([url], { replaceUrl: true });
+  }
 }

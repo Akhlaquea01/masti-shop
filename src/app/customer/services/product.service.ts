@@ -16,6 +16,8 @@ export class ProductService {
       reviewTitle: "Great T-shirt!",
       comment: "The T-shirt is very comfortable and fits perfectly. Quality is good for the price.",
       helpfulCount: 10,
+      userName: "John Doe",
+      profileImage: "https://images.unsplash.com/photo-1522724514897-24b0eb7ba3ea?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       unhelpfulCount: 1
     },
     {
@@ -28,6 +30,8 @@ export class ProductService {
       reviewTitle: "Absolutely love it!",
       comment: "This hoodie is super cozy and warm. Perfect for winter. Highly recommend!",
       helpfulCount: 15,
+      userName: "John Doe",
+      profileImage: "https://images.unsplash.com/photo-1522724514897-24b0eb7ba3ea?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       unhelpfulCount: 0
     },
     {
@@ -40,6 +44,8 @@ export class ProductService {
       reviewTitle: "Good mug, but design could be better",
       comment: "The mug is sturdy, but the design is a bit plain. Works fine for daily use.",
       helpfulCount: 4,
+      userName: "John Doe",
+      profileImage: "https://images.unsplash.com/photo-1522724514897-24b0eb7ba3ea?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       unhelpfulCount: 2
     },
     {
@@ -52,6 +58,8 @@ export class ProductService {
       reviewTitle: "Nice and slim",
       comment: "The case is slim yet offers good protection. Satisfied with the purchase.",
       helpfulCount: 8,
+      userName: "John Doe",
+      profileImage: "https://images.unsplash.com/photo-1522724514897-24b0eb7ba3ea?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       unhelpfulCount: 1
     },
     {
@@ -64,6 +72,8 @@ export class ProductService {
       reviewTitle: "Excellent quality notebook",
       comment: "The paper quality is fantastic, and it's perfect for note-taking. Highly recommended!",
       helpfulCount: 12,
+      userName: "John Doe",
+      profileImage: "https://images.unsplash.com/photo-1522724514897-24b0eb7ba3ea?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       unhelpfulCount: 0
     },
     {
@@ -76,6 +86,8 @@ export class ProductService {
       reviewTitle: "Good, but could be more customizable",
       comment: "The apron quality is good, but limited customization options. Still worth it.",
       helpfulCount: 6,
+      userName: "John Doe",
+      profileImage: "https://images.unsplash.com/photo-1522724514897-24b0eb7ba3ea?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       unhelpfulCount: 3
     },
     {
@@ -88,6 +100,8 @@ export class ProductService {
       reviewTitle: "Beautiful frame!",
       comment: "The frame looks amazing and fits well with my decor. Perfect for family photos.",
       helpfulCount: 9,
+      userName: "John Doe",
+      profileImage: "https://images.unsplash.com/photo-1522724514897-24b0eb7ba3ea?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       unhelpfulCount: 1
     }
   ];
@@ -101,7 +115,6 @@ export class ProductService {
       price: "15.00",
       offer: "10%",
       originalPrice: "16.67",
-      imageUrl: "https://images.unsplash.com/photo-1522724514897-24b0eb7ba3ea?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       images: [
         "https://images.unsplash.com/photo-1522724514897-24b0eb7ba3ea?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1521498542256-5aeb47ba2b36?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -124,7 +137,6 @@ export class ProductService {
       price: "25.00",
       offer: "15%",
       originalPrice: "29.41",
-      imageUrl: "https://images.unsplash.com/photo-1517942420142-6a296f9ee4b1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       images: [
         "https://images.unsplash.com/photo-1517942420142-6a296f9ee4b1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1519456264917-42d0aa2e0625?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -147,7 +159,6 @@ export class ProductService {
       price: "25.00",
       offer: "15%",
       originalPrice: "29.41",
-      imageUrl: "https://images.unsplash.com/photo-1695060530614-720eaaad8b26?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       images: [
         "https://images.unsplash.com/photo-1695060530614-720eaaad8b26?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1473188588951-666fce8e7c68?q=80&w=1874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -170,7 +181,6 @@ export class ProductService {
       price: "25.00",
       offer: "15%",
       originalPrice: "29.41",
-      imageUrl: "https://images.unsplash.com/photo-1483103068651-8ce44652c331?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       images: [
         "https://images.unsplash.com/photo-1483103068651-8ce44652c331?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1514642837906-76ed4698ec34?q=80&w=1918&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -194,7 +204,6 @@ export class ProductService {
       price: "8.00",
       offer: "5%",
       originalPrice: "8.42",
-      imageUrl: "https://images.unsplash.com/photo-1497760953885-d269502b5740?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       images: [
         "https://images.unsplash.com/photo-1497760953885-d269502b5740?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1518184980852-9f01362dd72f?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -216,7 +225,6 @@ export class ProductService {
       price: "20.00",
       offer: "10%",
       originalPrice: "22.22",
-      imageUrl: "https://images.unsplash.com/photo-1628992304915-1f67982fd774?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       images: [
         "https://images.unsplash.com/photo-1628992304915-1f67982fd774?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1579656559983-5fa194b1994d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -238,7 +246,6 @@ export class ProductService {
       price: "12.00",
       offer: "20%",
       originalPrice: "15.00",
-      imageUrl: "https://images.unsplash.com/photo-1535157412991-2ef801c1748b?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       images: ["https://images.unsplash.com/photo-1535157412991-2ef801c1748b?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1513863674925-18652a1048f2?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1496142958257-bb62cac8603f?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -260,7 +267,6 @@ export class ProductService {
       price: "5.00",
       offer: "10%",
       originalPrice: "5.56",
-      imageUrl: "https://images.unsplash.com/photo-1518226203301-8e7f833c6a94?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       images: ["https://images.unsplash.com/photo-1518226203301-8e7f833c6a94?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1585178332093-1dfaa3998f6b?q=80&w=1885&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1657310216811-fa2fb45372e1?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
@@ -280,7 +286,6 @@ export class ProductService {
       price: "18.00",
       offer: "15%",
       originalPrice: "21.18",
-      imageUrl: "https://images.unsplash.com/photo-1729774057603-f7f5703718bc?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       images: [
         "https://images.unsplash.com/photo-1729774057603-f7f5703718bc?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1729774092032-31b9e3a4e368?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -302,7 +307,6 @@ export class ProductService {
       price: "10.00",
       offer: "10%",
       originalPrice: "11.11",
-      imageUrl: "https://images.unsplash.com/photo-1670726113933-4bb3940deaf3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       images: ["https://images.unsplash.com/photo-1670726113933-4bb3940deaf3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1458323679487-2ebd81b13c5f?q=80&w=1772&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1589175530995-d37b53468819?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],

@@ -15,7 +15,7 @@
     <div class="w-full max-w-sm bg-white shadow-md rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl"
         *ngFor="let product of products">
         <a (click)="onProductClick(product.id)">
-            <img [src]="product.imageUrl" alt="Product" class="h-64 w-full object-cover rounded-t-lg" />
+            <img [src]="product.images[0]" alt="Product" class="h-64 w-full object-cover rounded-t-lg" />
             <div class="p-4">
                 <span class="text-gray-400 uppercase text-xs">{{ product.brand }}</span>
                 <p class="text-lg font-bold text-black truncate mt-1 capitalize">{{ product.name }}</p>

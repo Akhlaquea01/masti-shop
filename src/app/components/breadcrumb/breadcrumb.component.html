@@ -2,7 +2,7 @@
     <ol class="flex items-center flex-wrap gap-1 md:gap-2">
         <li *ngFor="let item of items; let isLast = last" class="flex items-center">
             <ng-container *ngIf="!isLast; else lastBreadcrumb">
-                <a *ngIf="item.url; else plainText" [routerLink]="item.url"
+                <a *ngIf="item.url; else plainText" (click)="navigateToUrl(item.url)"
                     class="inline-flex items-center text-sm font-medium text-gray-600 hover:text-blue-500">
                     <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">

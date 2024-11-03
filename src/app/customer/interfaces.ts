@@ -29,7 +29,6 @@ export interface Product {
     price: string;
     offer: string;
     originalPrice: string;
-    imageUrl: string;
     description?: string;
     colors?: string[];
     sizes?: string[];
@@ -45,6 +44,8 @@ export interface Review {
     id: string;
     productId: string;
     userId: string;
+    userName: string;
+    profileImage: string;
     ratings: number;
     productQualityRating: number;
     purchasingExperienceRating: number;

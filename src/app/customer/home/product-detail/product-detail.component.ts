@@ -9,12 +9,13 @@ import { ProductService } from '../../services/product.service';
   templateUrl: './product-detail.component.html'
 })
 export class ProductDetailComponent implements OnInit {
-newReviewContent: any;
-submitReview() {
-throw new Error('Method not implemented.');
-}
+  newReviewContent: any;
+  breadcrumbItems: ({ label: string; url: string; } | { label: string; url?: undefined; })[] = [];
+  submitReview() {
+    throw new Error('Method not implemented.');
+  }
   reviews: Review[] = [];
-  product: any;
+  product: Product | undefined;
   currentImage: string; // To store the currently displayed image
   selectedColor: string;
   selectedSize: string;
@@ -35,6 +36,11 @@ throw new Error('Method not implemented.');
     this.reviews = this.productService.getReviewsByProductId(productId);
     this.currentImage = this.product.images[0]; // Set the initial image
     // Initialize with the first color and size if available
+    this.breadcrumbItems = [
+      { label: 'Home', url: '/home' },
+      { label: 'Product Category', url: `/products/${this.product.categoryId}` },
+      { label: 'Product Details' }
+    ];
     this.selectedColor = this.product.colors[0];
     this.selectedSize = this.product.sizes[0];
   }
