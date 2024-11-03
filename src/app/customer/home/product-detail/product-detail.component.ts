@@ -9,15 +9,20 @@ import { ProductService } from '../../services/product.service';
   templateUrl: './product-detail.component.html'
 })
 export class ProductDetailComponent implements OnInit {
+  reviewText: any;
+  selectedStars: number;
   onRatingSelected($event: number) {
     console.log($event);
-
+    this.selectedStars = $event
   }
   Math = Math;
   newReviewContent: any;
   breadcrumbItems: ({ label: string; url: string; } | { label: string; url?: undefined; })[] = [];
   submitReview() {
-    throw new Error('Method not implemented.');
+    console.log(this.reviewText);
+    console.log(this.selectedStars);
+
+
   }
   reviews: Review[] = [];
   product: Product | undefined;
@@ -28,7 +33,7 @@ export class ProductDetailComponent implements OnInit {
   inWishlist: boolean = false;
   averageRating: number = 0;
 
-  ratingCounts = [ ];
+  ratingCounts = [];
 
 
   constructor(

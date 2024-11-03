@@ -99,22 +99,22 @@
         <div class="p-4 sm:p-6 grid grid-cols-1 lg:grid-cols-6 gap-6">
             <div class="lg:col-span-4 col-span-1">
                 <!-- Form to submit a review -->
-                <form action="" method="POST" class="space-y-4">
+                <form (ngSubmit)="submitReview()" class="space-y-4" *ngIf="true">
                     <masTi-rating [filledStars]="0" [totalStars]="5" [filledColor]="'orange'" [emptyColor]="'lightgray'"
                         [editable]="true" (ratingSelected)="onRatingSelected($event)"></masTi-rating>
                     <textarea id="review" name="review" rows="4" required
                         class="block w-full p-3 text-sm text-gray-900 bg-gray-50 rounded-md border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                        placeholder="Write your review"></textarea>
+                        placeholder="Write your review" [(ngModel)]="reviewText" ></textarea>
                     <div class="text-right py-4">
-                        <a href="/user"
+                        <button type="submit"
                             class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-semibold rounded-lg text-sm px-5 py-3">Post
-                            Review</a>
+                            Review</button>
                     </div>
                 </form>
             </div>
 
             <!-- Dynamic star rating overview -->
-            <div class="lg:col-span-2 hidden lg:flex flex-col space-y-4">
+            <div class="lg:col-span-2 lg:flex flex-col space-y-4">
                 <div class="flex items-center">
                     <masTi-rating [filledStars]="averageRating" [totalStars]="5" [filledColor]="'orange'" [emptyColor]="'lightgray'"
                         [editable]="false" (ratingSelected)="onRatingSelected($event)"></masTi-rating>
