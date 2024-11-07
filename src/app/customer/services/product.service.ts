@@ -23,7 +23,7 @@ export class ProductService {
     {
       id: "r103",
       productId: "101", // T-shirt
-      userId: "u001",
+      userId: "u002",
       ratings: 3,
       productQualityRating: 4,
       purchasingExperienceRating: 5,
@@ -37,7 +37,7 @@ export class ProductService {
     {
       id: "r104",
       productId: "101", // T-shirt
-      userId: "u001",
+      userId: "u002",
       ratings: 2,
       productQualityRating: 4,
       purchasingExperienceRating: 5,
@@ -51,7 +51,7 @@ export class ProductService {
     {
       id: "r105",
       productId: "101", // T-shirt
-      userId: "u001",
+      userId: "u005",
       ratings: 1,
       productQualityRating: 4,
       purchasingExperienceRating: 5,
@@ -65,7 +65,7 @@ export class ProductService {
     {
       id: "r106",
       productId: "101", // T-shirt
-      userId: "u001",
+      userId: "u003",
       ratings: 5,
       productQualityRating: 4,
       purchasingExperienceRating: 5,
@@ -168,7 +168,7 @@ export class ProductService {
       id: "101",
       name: "T-shirt",
       brand: "BrandX",
-      price: "15.00",
+      price: 15.00,
       offer: "10%",
       originalPrice: "16.67",
       images: [
@@ -190,7 +190,7 @@ export class ProductService {
       id: "102",
       name: "Hoodie",
       brand: "BrandY",
-      price: "25.00",
+      price: 25.00,
       offer: "15%",
       originalPrice: "29.41",
       images: [
@@ -212,7 +212,7 @@ export class ProductService {
       id: "103",
       name: "Bags",
       brand: "BrandY",
-      price: "25.00",
+      price: 25.00,
       offer: "15%",
       originalPrice: "29.41",
       images: [
@@ -234,7 +234,7 @@ export class ProductService {
       id: "104",
       name: "Caps",
       brand: "BrandY",
-      price: "25.00",
+      price: 25.00,
       offer: "15%",
       originalPrice: "29.41",
       images: [
@@ -257,7 +257,7 @@ export class ProductService {
       id: "201",
       name: "Mug",
       brand: "KitchenPro",
-      price: "8.00",
+      price: 8.00,
       offer: "5%",
       originalPrice: "8.42",
       images: [
@@ -278,7 +278,7 @@ export class ProductService {
       id: "202",
       name: "Pillow",
       brand: "ComfortPlus",
-      price: "20.00",
+      price: 20.00,
       offer: "10%",
       originalPrice: "22.22",
       images: [
@@ -299,7 +299,7 @@ export class ProductService {
       id: "301",
       name: "Phone Case",
       brand: "CaseMate",
-      price: "12.00",
+      price: 12.00,
       offer: "20%",
       originalPrice: "15.00",
       images: ["https://images.unsplash.com/photo-1535157412991-2ef801c1748b?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -320,7 +320,7 @@ export class ProductService {
       id: "401",
       name: "Notebook",
       brand: "PaperWorks",
-      price: "5.00",
+      price: 5.00,
       offer: "10%",
       originalPrice: "5.56",
       images: ["https://images.unsplash.com/photo-1518226203301-8e7f833c6a94?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -339,7 +339,7 @@ export class ProductService {
       id: "501",
       name: "Personalized Apron",
       brand: "KitchenMaster",
-      price: "18.00",
+      price: 18.00,
       offer: "15%",
       originalPrice: "21.18",
       images: [
@@ -360,7 +360,7 @@ export class ProductService {
       id: "601",
       name: "Photo Frame",
       brand: "Memories",
-      price: "10.00",
+      price: 10.00,
       offer: "10%",
       originalPrice: "11.11",
       images: ["https://images.unsplash.com/photo-1670726113933-4bb3940deaf3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",

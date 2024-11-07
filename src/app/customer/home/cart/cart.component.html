@@ -17,20 +17,43 @@
         <!-- Product List -->
         <div class="flex-1 overflow-y-auto p-6">
             <ul role="list" class="-my-6 divide-y divide-gray-200">
-                <li *ngFor="let product of products" class="flex py-6">
+                <li *ngFor="let item of cartItems.items" class="flex py-6">
                     <div class="h-24 w-24 overflow-hidden rounded-md border border-gray-200">
-                        <img [src]="product.imageSrc" [alt]="product.imageAlt"
+                        <img [src]="item.image" [alt]="item.imageAlt"
                             class="h-full w-full object-cover object-center" />
                     </div>
                     <div class="ml-4 flex flex-1 flex-col">
                         <div class="flex justify-between text-base font-medium text-gray-900">
-                            <h3><a [href]="product.href">{{ product.name }}</a></h3>
-                            <p class="ml-4">{{ product.price | currency }}</p>
+                            <h3>{{ item.name }}</h3>
+                            <p class="ml-4">{{ item.price | currency:'INR' }}</p>
                         </div>
-                        <p class="text-sm text-gray-500">{{ product.color }}</p>
+                        <p class="text-sm text-gray-500">Size: {{ item.selectedSize }}</p>
+                        <div class="flex items-center">
+                            <p class="text-sm text-gray-500 mr-2">
+                                Color:
+                            </p>
+                            <span class="inline-block w-4 h-4 border border-gray-300"
+                                [ngStyle]="{'background-color': item.selectedColor}">
+                            </span>
+                        </div>
                         <div class="flex flex-1 items-end justify-between text-sm">
-                            <p class="text-gray-500">Qty {{ product.quantity }}</p>
-                            <button (click)="removeProduct(product.id)"
+                            <div class="flex items-center text-gray-500">
+                                <p class="mr-2">Qty:</p>
+
+                                <button (click)="item.quantity = item.quantity > 1 ? item.quantity - 1 : 1"
+                                    class="border border-gray-300 rounded px-2 py-1 focus:outline-none">
+                                    -
+                                </button>
+
+                                <span class="mx-2">{{ item.quantity }}</span>
+
+                                <button (click)="item.quantity =  item.quantity + 1 "
+                                    class="border border-gray-300 rounded px-2 py-1 focus:outline-none">
+                                    +
+                                </button>
+                            </div>
+
+                            <button (click)="removeProduct(item.product)"
                                 class="font-medium text-indigo-600 hover:text-indigo-500">
                                 Remove
                             </button>
@@ -44,12 +67,12 @@
         <div class="border-t border-gray-200 p-6">
             <div class="flex justify-between text-base font-medium text-gray-900">
                 <p>Subtotal</p>
-                <p>{{ subtotal | currency }}</p>
+                <p>{{ subtotal | currency:'INR' }}</p>
             </div>
             <p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
             <div class="mt-6">
-                <a
-                    class="flex justify-center rounded-md bg-indigo-600 px-6 py-3 text-white font-medium hover:bg-indigo-700 cursor-pointer" (click)="navigateToCheckout()">
+                <a class="flex justify-center rounded-md bg-indigo-600 px-6 py-3 text-white font-medium hover:bg-indigo-700 cursor-pointer"
+                    (click)="navigateToCheckout()">
                     Checkout
                 </a>
             </div>

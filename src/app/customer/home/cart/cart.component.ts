@@ -1,71 +1,51 @@
 import { Component } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 import { Router } from '@angular/router';
+import { Cart } from '../../interfaces';
 
 @Component({
   selector: 'masTi-cart',
   templateUrl: './cart.component.html'
 })
 export class CartComponent {
-  cartItems: any[] = [];
-  open = false; // Controls the visibility of the sidebar
+  open: boolean = false;
+  cartItems: Cart | any;
+  storedUser: any;
 
-  products = [
-    {
-      id: 1,
-      name: 'Throwback Hip Bag',
-      href: '#',
-      color: 'Salmon',
-      price: 90.00,
-      quantity: 1,
-      imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
-      imageAlt: 'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-    },
-    {
-      id: 2,
-      name: 'Medium Stuff Satchel',
-      href: '#',
-      color: 'Blue',
-      price: 32.00,
-      quantity: 1,
-      imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/shopping-cart-page-04-product-02.jpg',
-      imageAlt: 'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
-    }
-  ];
-
+  // Calculate subtotal based on the new structure
   get subtotal() {
-    return this.products.reduce((sum, product) => sum + product.price * product.quantity, 0);
+    if (!this.cartItems || !this.cartItems.items) {
+      return 0;
+    }
+    return this.cartItems.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
   }
 
   toggleSidebar() {
     this.open = !this.open;
   }
 
-  removeProduct(id: number) {
-    this.products = this.products.filter(product => product.id !== id);
+  removeProduct(productId: string) {
+    // Remove item from the cartItems based on productId
+    if (this.cartItems.items.length) {
+      this.cartItems.items = this.cartItems.items.filter(item => item.product !== productId);
+    }
   }
 
-  constructor(private cartService: CartService,
-    private router: Router
-
-  ) { }
+  constructor(private cartService: CartService, private router: Router) { }
 
   ngOnInit(): void {
-    // this.cartService.toggleSidebar.subscribe(open => this.open = open);
-    this.cartItems = this.cartService.getCartItems(); // Get cart items when the component initializes
+    // Initialize the cartItems as per the new structure
+    this.storedUser = JSON.parse(localStorage.getItem('user') || 'null');
+    this.cartItems = this.cartService.getCartItems(this.storedUser.id);
   }
 
   clearCart(): void {
-    this.cartService.clearCart(); // Clear cart items
+    this.cartService.clearCart(this.storedUser.id); // Clear cart items
     this.cartItems = []; // Reset cart items
   }
-  removeFromCart(item: any): void {
-    this.cartItems = this.cartItems.filter(cartItem => cartItem !== item); // Remove the item from the local cartItems array
-    this.cartService.clearCart(); // Clear the cart in the service
-    this.cartItems.forEach(cartItem => this.cartService.addToCart(cartItem)); // Re-add remaining items to the service
-  }
+
   navigateToCheckout() {
     this.router.navigate(['/checkout']);
-    this.open=false;
+    this.open = false;
   }
 }

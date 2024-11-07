@@ -1,195 +1,88 @@
-<body class="bg-gray-50">
+<main class="max-w-5xl mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Checkout Form -->
+        <div class="lg:col-span-2 space-y-8">
+            <!-- Delivery Options -->
+            <section class="bg-white p-6 rounded-lg shadow-sm">
+                <h2 class="text-xl font-semibold mb-4">Delivery Method</h2>
+                <div class="space-y-4">
+                    <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:border-black">
+                        <input type="radio" name="delivery" class="form-radio text-black" checked />
+                        <div class="ml-4">
+                            <div class="font-semibold">Standard Delivery</div>
+                            <div class="text-sm text-gray-600">Free • 5-7 business days</div>
+                        </div>
+                    </label>
+                </div>
+            </section>
 
-    <main class="max-w-5xl mx-auto px-4 py-8">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Checkout Form -->
-            <div class="lg:col-span-2 space-y-8">
-                <!-- Delivery Options -->
-                <section class="bg-white p-6 rounded-lg shadow-sm">
-                    <h2 class="text-xl font-semibold mb-4">Delivery Method</h2>
-                    <div class="space-y-4">
-                        <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:border-black">
-                            <input type="radio" name="delivery" class="form-radio text-black" checked>
-                            <div class="ml-4">
-                                <div class="font-semibold">Standard Delivery</div>
-                                <div class="text-sm text-gray-600">Free • 5-7 business days</div>
-                            </div>
-                        </label>
-                    </div>
-                </section>
+            <!-- Shipping Address -->
+            <section class="bg-white p-6 rounded-lg shadow-sm">
+                <h2 class="text-xl font-semibold">Shipping Address</h2>
+                <form class="space-y-4">
+                    <input type="text" name="name" [(ngModel)]="shippingAddress.name" placeholder="Full Name"
+                        class="w-full p-2 border rounded-lg" />
+                    <input type="text" [(ngModel)]="shippingAddress.street" placeholder="Street Address" name="street"
+                        class="w-full p-2 border rounded-lg" />
+                    <input type="text" [(ngModel)]="shippingAddress.apartment" placeholder="Apartment, suite, etc." name="apartment"
+                        class="w-full p-2 border rounded-lg" />
+                    <input type="text" [(ngModel)]="shippingAddress.city" placeholder="City" name="city"
+                        class="w-full p-2 border rounded-lg" />
+                    <select [(ngModel)]="shippingAddress.state" name="state" class="w-full p-2 border rounded-lg">
+                        <option>Select State</option>
+                        <option value="NY">NY</option>
+                        <option value="CA">CA</option>
+                        <!-- Add other states -->
+                    </select>
+                    <input type="text" [(ngModel)]="shippingAddress.zip" name ="zip" placeholder="ZIP Code"
+                        class="w-full p-2 border rounded-lg" />
+                </form>
+            </section>
+        </div>
 
-                <!-- Shipping Address -->
-                <section class="bg-white p-6 rounded-lg shadow-sm">
-                    <div class="flex items-center justify-between mb-4">
-                        <h2 class="text-xl font-semibold">Shipping Address</h2>
-                        <button class="text-sm text-gray-600 hover:text-black">
-                            <i class="far fa-address-book mr-1"></i> Use saved address
-                        </button>
-                    </div>
-                    <form class="space-y-4">
-                        <div class="">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                                <input type="text"
-                                    class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-black focus:outline-none"
-                                    placeholder="Akhlaque">
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Street Address</label>
-                            <input type="text"
-                                class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-black focus:outline-none"
-                                placeholder="123 Main St">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Apartment, suite, etc.
-                                (optional)</label>
-                            <input type="text"
-                                class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-black focus:outline-none"
-                                placeholder="Apt 4B">
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">City</label>
-                                <input type="text"
-                                    class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-black focus:outline-none"
-                                    placeholder="New York">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">State</label>
-                                <select
-                                    class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-black focus:outline-none">
-                                    <option>Select State</option>
-                                    <option>NY</option>
-                                    <option>CA</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">ZIP Code</label>
-                                <input type="text"
-                                    class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-black focus:outline-none"
-                                    placeholder="10001">
-                            </div>
-                        </div>
-                    </form>
-                </section>
+        <!-- Order Summary -->
+        <div class="lg:col-span-1">
+            <div class="bg-white p-6 rounded-lg shadow-sm sticky top-4">
+                <h2 class="text-xl font-semibold mb-4">Order Summary</h2>
 
-                <!-- Payment Method -->
-                <section class="bg-white p-6 rounded-lg shadow-sm">
-                    <div class="flex items-center justify-between mb-4">
-                        <h2 class="text-xl font-semibold">Payment Method</h2>
-                        <div class="flex space-x-2">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa"
-                                class="h-6">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
-                                alt="Mastercard" class="h-6">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/2052px-American_Express_logo_%282018%29.svg.png"
-                                alt="Amex" class="h-6">
-                        </div>
-                    </div>
-                    <form class="space-y-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Card Number</label>
-                            <div class="relative">
-                                <input type="text"
-                                    class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-black focus:outline-none"
-                                    placeholder="1234 5678 9012 3456">
-                                <i class="fas fa-lock absolute right-3 top-3 text-gray-400"></i>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Expiration Date</label>
-                                <input type="text"
-                                    class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-black focus:outline-none"
-                                    placeholder="MM/YY">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Security Code</label>
-                                <div class="relative">
-                                    <input type="text"
-                                        class="w-full p-2 border rounded-lg focus:ring-2 focus:ring-black focus:outline-none"
-                                        placeholder="CVV">
-                                    <button class="absolute right-3 top-3 text-gray-400"
-                                        title="Your card's 3-digit security code">
-                                        <i class="fas fa-question-circle"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox text-black">
-                                <span class="ml-2 text-sm text-gray-600">Save this card for future purchases</span>
-                            </label>
-                        </div>
-                    </form>
-                </section>
-            </div>
-
-            <!-- Order Summary -->
-            <div class="lg:col-span-1">
-                <div class="bg-white p-6 rounded-lg shadow-sm sticky top-4">
-                    <h2 class="text-xl font-semibold mb-4">Order Summary</h2>
-
-                    <!-- Product -->
-                    <div class="flex items-start space-x-4 mb-4 pb-4 border-b">
-                        <img src="https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="Nike Air Max 2024" class="w-20 h-20 rounded-lg">
-                        <div class="flex-1">
-                            <h3 class="font-medium">Nike Air Max 2024</h3>
-                            <p class="text-sm text-gray-600">Size: US 10</p>
-                            <p class="text-sm text-gray-600">Quantity: 1</p>
-                            <p class="font-medium mt-1">$179.99</p>
-                        </div>
-                    </div>
-
-                    <!-- Promo Code -->
-                    <div class="mb-4 pb-4 border-b">
-                        <div class="flex space-x-2">
-                            <input type="text"
-                                class="flex-1 p-2 border rounded-lg focus:ring-2 focus:ring-black focus:outline-none"
-                                placeholder="Promo Code">
-                            <button class="px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-black">Apply</button>
-                        </div>
-                    </div>
-
-                    <!-- Cost Breakdown -->
-                    <div class="space-y-2 mb-4 pb-4 border-b">
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Subtotal</span>
-                            <span>$179.99</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Shipping</span>
-                            <span class="text-green-600">Free</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Tax</span>
-                            <span>$16.20</span>
-                        </div>
-                    </div>
-
-                    <!-- Total -->
-                    <div class="flex justify-between items-center mb-6">
-                        <span class="text-lg font-semibold">Total</span>
-                        <span class="text-lg font-semibold">$196.19</span>
-                    </div>
-
-                    <!-- Place Order Button -->
-                    <button
-                        class="w-full bg-black text-white py-4 rounded-full hover:bg-gray-800 flex items-center justify-center">
-                        <span>Place Order</span>
-                        <i class="fas fa-lock ml-2"></i>
-                    </button>
-
-                    <!-- Additional Info -->
-                    <div class="mt-4 text-sm text-gray-600 text-center">
-                        <p>By placing your order, you agree to our</p>
-                        <p><a href="#" class="underline">Terms of Service</a> and <a href="#" class="underline">Privacy
-                                Policy</a></p>
+                <!-- Product List -->
+                <div *ngFor="let item of cartItems.items" class="flex items-start space-x-4 mb-4 pb-4 border-b">
+                    <img [src]="item.image" [alt]="item.imageAlt" class="w-20 h-20 rounded-lg" />
+                    <div class="flex-1">
+                        <h3 class="font-medium">{{ item.name }}</h3>
+                        <p class="text-sm text-gray-600">Size: {{ item.selectedSize }}</p>
+                        <p class="text-sm text-gray-600">Quantity: {{ item.quantity }}</p>
+                        <p class="font-medium mt-1">{{ item.price | currency }}</p>
                     </div>
                 </div>
+
+                <!-- Cost Breakdown -->
+                <div class="space-y-2 mb-4 pb-4 border-b">
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Subtotal</span>
+                        <span>{{ totalAmount | currency }}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Shipping</span>
+                        <span>{{ shippingCost | currency }}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Tax</span>
+                        <span>{{ tax | currency }}</span>
+                    </div>
+                </div>
+
+                <!-- Total -->
+                <div class="flex justify-between items-center mb-6">
+                    <span class="text-lg font-semibold">Total</span>
+                    <span class="text-lg font-semibold">{{ orderTotal | currency }}</span>
+                </div>
+
+                <!-- Place Order Button -->
+                <button (click)="onPlaceOrder()" class="w-full bg-black text-white py-4 rounded-full hover:bg-gray-800">
+                    Place Order
+                </button>
             </div>
         </div>
-    </main>
+    </div>
+</main>

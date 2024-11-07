@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
   isLoginMode: boolean = true;
   confirmPassword: string = '';
   signupData: User = {
-    id: '',
+    id: 'u001',//TODO
     phone: null,
     name: '',
     email: '',
@@ -50,6 +50,7 @@ export class LoginComponent implements OnInit {
       console.log('Passwords do not match.');
       return;
     }
+    this.signupData.id = 'u001';
     this.authService.singUp(this.signupData);
     this.router.navigate(['/home']);
 

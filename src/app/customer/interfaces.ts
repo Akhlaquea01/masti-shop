@@ -27,7 +27,7 @@ export interface Product {
     id: string;
     name: string;
     brand: string;
-    price: string;
+    price: number;
     offer: string;
     originalPrice: string;
     description?: string;
@@ -76,28 +76,37 @@ export interface User {
     reviews?: any[];
 }
 
-export interface CartSchema {
-    user: string;
-    items: CartItem[]
+export interface Cart {
+    id?: string;
+    user?: string;
+    items?: Item[]
 };
 
-export interface WishListSchema {
+export interface WishList {
+    id: string;
     user: string;
-    items: CartItem[]
+    items: Item[]
 }
-export interface CartItem {
+export interface Item {
     product: string;
     quantity: number;
     price: number;
+    selectedColor?: string;
+    selectedSize?: string;
+    name: string;
+    brand: string;
+    url: string;
+    image: string;
+    imageAlt: string;
 }
-
+export interface orderItem {
+    product: string,
+    quantity: number,
+    priceAtPurchase: number
+}
 export interface OrderSchema {
     user: string,
-    items: [{
-        product: string,
-        quantity: number,
-        priceAtPurchase: number
-    }],
+    items: orderItem[],
     totalAmount: number,
     address: {
         street: String,
