@@ -4,6 +4,7 @@ import { CartService } from '../../services/cart.service';
 import { Cart, Item, Product, Review } from '../../interfaces';
 import { ProductService } from '../../services/product.service';
 import { v4 as uuidv4 } from 'uuid';
+import { WishListService } from '../../services/wishlist.service';
 
 @Component({
   selector: 'masTi-product-detail',
@@ -29,7 +30,8 @@ export class ProductDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
-    private cartService: CartService
+    private cartService: CartService,
+    private wishlistService: WishListService
   ) {
 
   }
@@ -93,6 +95,23 @@ export class ProductDetailComponent implements OnInit {
   }
   toggleWishlist() {
     this.inWishlist = !this.inWishlist; // Toggle the wishlist status
+    if (!this.inWishlist) {
+      this.wishlistService.removeFromWishlist(this.product.id);
+    } else {
+      const item = {
+        product: this.product.id,
+        quantity: this.quantity,
+        price: this.product.price,
+        selectedColor: this.selectedColor,
+        selectedSize: this.selectedSize,
+        name: this.product.name,
+        brand: this.product.brand,
+        url: `/products/${this.product.id}`,
+        image: this.product.images[0] || '',
+        imageAlt: this.product.name
+      }
+      this.wishlistService.addToWishlist('u001', item);
+    }
   }
 
   calculateAverageRating(): void {

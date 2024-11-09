@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Cart } from '../interfaces';
+import { Cart, Item } from '../interfaces';
 import { v4 as uuidv4 } from 'uuid';
 @Injectable({
   providedIn: 'root',
@@ -32,7 +32,7 @@ export class WishListService {
     return userWishlist ? userWishlist.items : [];
   }
 
-  addToWishlist(userId: string, product: any): void {
+  addToWishlist(userId: string, product: Item): void {
     const userWishlist = this.wishListItems.find((wishlist) => wishlist.user === userId);
     if (userWishlist) {
       userWishlist.items.push(product);
