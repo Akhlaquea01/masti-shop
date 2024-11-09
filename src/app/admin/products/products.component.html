@@ -1,0 +1,41 @@
+<div class="bg-white p-6 shadow-md rounded-md">
+    <h2 class="text-2xl font-bold mb-4">Products</h2>
+
+    <!-- Add Product Form -->
+    <form class="mb-4 flex gap-4" (submit)="addProduct()">
+        <input type="text" class="border p-2 flex-1" placeholder="Product Name" [(ngModel)]="newProduct.name"
+            name="name" required />
+        <input type="number" class="border p-2" placeholder="Price" [(ngModel)]="newProduct.price" name="price"
+            required />
+        <input type="number" class="border p-2" placeholder="Stock" [(ngModel)]="newProduct.stock" name="stock"
+            required />
+        <button type="submit" class="bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded">
+            Add Product
+        </button>
+    </form>
+
+    <!-- Products Table -->
+    <table class="w-full border-collapse border border-gray-300">
+        <thead class="bg-gray-200">
+            <tr>
+                <th class="border border-gray-300 p-2">Product Name</th>
+                <th class="border border-gray-300 p-2">Price</th>
+                <th class="border border-gray-300 p-2">Stock</th>
+                <th class="border border-gray-300 p-2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td class="border border-gray-300 p-2">{{ product.name }}</td>
+                <td class="border border-gray-300 p-2">₹{{ product.price }}</td>
+                <td class="border border-gray-300 p-2">{{ product.stock }}</td>
+                <td class="border border-gray-300 p-2">
+                    <button class="bg-red-500 hover:bg-red-700 text-white px-4 py-1 rounded"
+                        (click)="deleteProduct(product)">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

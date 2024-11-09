@@ -1,0 +1,31 @@
+<nav class="bg-white py-2 px-4 rounded-lg shadow-sm" aria-label="Breadcrumb">
+    <ol class="flex items-center flex-wrap gap-1 md:gap-2">
+        <li *ngFor="let item of items; let isLast = last" class="flex items-center">
+            <ng-container *ngIf="!isLast; else lastBreadcrumb">
+                <a *ngIf="item.url; else plainText" (click)="navigateToUrl(item.url)"
+                    class="inline-flex items-center text-sm font-medium text-gray-600 hover:text-blue-500">
+                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 3.172L16.828 10H13v5H7v-5H3.172L10 3.172z" />
+                    </svg>
+                    <span>{{ item.label }}</span>
+                </a>
+
+                <svg class="w-4 h-4 text-gray-400 mx-1 mt-1" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M6.707 4.293a1 1 0 010 1.414L3.414 9H17a1 1 0 110 2H3.414l3.293 3.293a1 1 0 01-1.414 1.414l-5-5a1 1 0 010-1.414l5-5a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                </svg>
+            </ng-container>
+
+            <ng-template #plainText>
+                <span class="text-sm font-medium text-gray-600">{{ item.label }}</span>
+            </ng-template>
+
+            <ng-template #lastBreadcrumb>
+                <span class="text-sm font-medium text-gray-500">{{ item.label }}</span>
+            </ng-template>
+        </li>
+    </ol>
+</nav>

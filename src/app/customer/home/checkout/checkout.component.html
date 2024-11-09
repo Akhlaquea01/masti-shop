@@ -1,0 +1,88 @@
+<main class="max-w-5xl mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Checkout Form -->
+        <div class="lg:col-span-2 space-y-8">
+            <!-- Delivery Options -->
+            <section class="bg-white p-6 rounded-lg shadow-sm">
+                <h2 class="text-xl font-semibold mb-4">Delivery Method</h2>
+                <div class="space-y-4">
+                    <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:border-black">
+                        <input type="radio" name="delivery" class="form-radio text-black" checked />
+                        <div class="ml-4">
+                            <div class="font-semibold">Standard Delivery</div>
+                            <div class="text-sm text-gray-600">Free • 5-7 business days</div>
+                        </div>
+                    </label>
+                </div>
+            </section>
+
+            <!-- Shipping Address -->
+            <section class="bg-white p-6 rounded-lg shadow-sm">
+                <h2 class="text-xl font-semibold">Shipping Address</h2>
+                <form class="space-y-4">
+                    <input type="text" name="name" [(ngModel)]="shippingAddress.name" placeholder="Full Name"
+                        class="w-full p-2 border rounded-lg" />
+                    <input type="text" [(ngModel)]="shippingAddress.street" placeholder="Street Address" name="street"
+                        class="w-full p-2 border rounded-lg" />
+                    <input type="text" [(ngModel)]="shippingAddress.apartment" placeholder="Apartment, suite, etc." name="apartment"
+                        class="w-full p-2 border rounded-lg" />
+                    <input type="text" [(ngModel)]="shippingAddress.city" placeholder="City" name="city"
+                        class="w-full p-2 border rounded-lg" />
+                    <select [(ngModel)]="shippingAddress.state" name="state" class="w-full p-2 border rounded-lg">
+                        <option>Select State</option>
+                        <option value="NY">NY</option>
+                        <option value="CA">CA</option>
+                        <!-- Add other states -->
+                    </select>
+                    <input type="text" [(ngModel)]="shippingAddress.zip" name ="zip" placeholder="ZIP Code"
+                        class="w-full p-2 border rounded-lg" />
+                </form>
+            </section>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="lg:col-span-1">
+            <div class="bg-white p-6 rounded-lg shadow-sm sticky top-4">
+                <h2 class="text-xl font-semibold mb-4">Order Summary</h2>
+
+                <!-- Product List -->
+                <div *ngFor="let item of cartItems.items" class="flex items-start space-x-4 mb-4 pb-4 border-b">
+                    <img [src]="item.image" [alt]="item.imageAlt" class="w-20 h-20 rounded-lg" />
+                    <div class="flex-1">
+                        <h3 class="font-medium">{{ item.name }}</h3>
+                        <p class="text-sm text-gray-600">Size: {{ item.selectedSize }}</p>
+                        <p class="text-sm text-gray-600">Quantity: {{ item.quantity }}</p>
+                        <p class="font-medium mt-1">{{ item.price | currency }}</p>
+                    </div>
+                </div>
+
+                <!-- Cost Breakdown -->
+                <div class="space-y-2 mb-4 pb-4 border-b">
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Subtotal</span>
+                        <span>{{ totalAmount | currency }}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Shipping</span>
+                        <span>{{ shippingCost | currency }}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Tax</span>
+                        <span>{{ tax | currency }}</span>
+                    </div>
+                </div>
+
+                <!-- Total -->
+                <div class="flex justify-between items-center mb-6">
+                    <span class="text-lg font-semibold">Total</span>
+                    <span class="text-lg font-semibold">{{ orderTotal | currency }}</span>
+                </div>
+
+                <!-- Place Order Button -->
+                <button (click)="onPlaceOrder()" class="w-full bg-black text-white py-4 rounded-full hover:bg-gray-800">
+                    Place Order
+                </button>
+            </div>
+        </div>
+    </div>
+</main>

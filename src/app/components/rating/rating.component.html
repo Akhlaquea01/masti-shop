@@ -1,0 +1,8 @@
+<div class="star-rating flex space-x-1">
+    <ng-container *ngFor="let star of [].constructor(totalStars); let i = index">
+        <span class="cursor-pointer text-2xl" [style.color]="i < filledStars ? filledColor : emptyColor"
+            (click)="selectRating(i + 1)">
+            ★
+        </span>
+    </ng-container>
+</div>

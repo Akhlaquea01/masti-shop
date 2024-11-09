@@ -1,0 +1,55 @@
+<div class="flex justify-center items-center min-h-screen bg-gray-100">
+    <div class="bg-white p-8 rounded shadow-md w-96">
+        <h2 class="text-2xl font-bold mb-4 text-center">
+            {{ isLoginMode ? 'Login' : 'Sign Up' }}
+        </h2>
+
+        <!-- Common email and Password Fields -->
+        <input type="text" placeholder="Email" [(ngModel)]="signupData.email"
+            class="w-full p-2 mb-4 border border-gray-300 rounded" />
+        <input type="password" placeholder="Password" [(ngModel)]="signupData.password"
+            class="w-full p-2 mb-4 border border-gray-300 rounded" />
+
+        <!-- Confirm Password Field for Sign Up -->
+        <input *ngIf="!isLoginMode" type="password" placeholder="Confirm Password" [(ngModel)]="confirmPassword"
+            class="w-full p-2 mb-4 border border-gray-300 rounded" />
+
+        <!-- Additional Fields for Sign Up -->
+        <div *ngIf="!isLoginMode">
+            <input type="text" placeholder="Name" [(ngModel)]="signupData.name"
+                class="w-full p-2 mb-4 border border-gray-300 rounded" />
+            <input type="number" placeholder="Phone" [(ngModel)]="signupData.phone"
+                class="w-full p-2 mb-4 border border-gray-300 rounded" />
+
+            <!-- Address Fields -->
+            <input type="text" placeholder="Street" [(ngModel)]="signupData.address.street"
+                class="w-full p-2 mb-4 border border-gray-300 rounded" />
+            <input type="text" placeholder="City" [(ngModel)]="signupData.address.city"
+                class="w-full p-2 mb-4 border border-gray-300 rounded" />
+            <input type="text" placeholder="State" [(ngModel)]="signupData.address.state"
+                class="w-full p-2 mb-4 border border-gray-300 rounded" />
+            <input type="text" placeholder="Zip" [(ngModel)]="signupData.address.zip"
+                class="w-full p-2 mb-4 border border-gray-300 rounded" />
+
+            <!-- Role Selector -->
+            <select [(ngModel)]="signupData.role" class="w-full p-2 mb-4 border border-gray-300 rounded"
+                disabled="true">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
+        </div>
+
+        <!-- Submit Button -->
+        <button (click)="isLoginMode ? login() : signup()"
+            class="bg-blue-500 text-white w-full p-2 rounded hover:bg-blue-600 transition">
+            {{ isLoginMode ? 'Login' : 'Sign Up' }}
+        </button>
+
+        <!-- Toggle Login/Signup Mode -->
+        <p class="mt-4 text-center">
+            <span (click)="toggleMode()" class="text-blue-500 cursor-pointer">
+                {{ isLoginMode ? 'Create an account' : 'Already have an account? Login' }}
+            </span>
+        </p>
+    </div>
+</div>

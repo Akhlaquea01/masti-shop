@@ -1,0 +1,40 @@
+<div class="bg-white p-6 shadow-md rounded-md">
+  <h2 class="text-2xl font-bold mb-4">Orders</h2>
+  
+  <table class="w-full border-collapse border border-gray-300">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="border border-gray-300 p-2">Order ID</th>
+        <th class="border border-gray-300 p-2">Customer</th>
+        <th class="border border-gray-300 p-2">Items</th>
+        <th class="border border-gray-300 p-2">Total</th>
+        <th class="border border-gray-300 p-2">Status</th>
+        <th class="border border-gray-300 p-2">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td class="border border-gray-300 p-2">{{ order.id }}</td>
+        <td class="border border-gray-300 p-2">{{ order.customer }}</td>
+        <td class="border border-gray-300 p-2">{{ order.items.join(', ') }}</td>
+        <td class="border border-gray-300 p-2">₹{{ order.total }}</td>
+        <td class="border border-gray-300 p-2">
+          <span class="px-2 py-1 rounded-full text-white"
+                [ngClass]="{
+                  'bg-yellow-500': order.status === 'Pending',
+                  'bg-green-500': order.status === 'Delivered',
+                  'bg-red-500': order.status === 'Cancelled'
+                }">
+            {{ order.status }}
+          </span>
+        </td>
+        <td class="border border-gray-300 p-2">
+          <button class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-1 rounded"
+                  (click)="updateStatus(order, 'Delivered')">
+            Mark as Delivered
+          </button>
+        </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
